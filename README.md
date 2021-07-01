@@ -5,6 +5,8 @@ Mine-imator翻译
 如果翻译有误欢迎告诉我，我也会立刻去纠正的，没有翻译的部分多半是我卡壳了，也可以告诉我怎么翻译
 
 
+原作者网站	http://www.mineimator.com/
+
 ## 捐助|Donate
 |WeChat|AliPay|
 |:----:|:----:|
