@@ -1,4 +1,4 @@
-# Mine-imator-lang
+# Mine-imator 简体中文汉化
 Mine-imator翻译
 翻译文件，我会将我翻译的上传到这里，也方便我自己进行新旧文本差距，让我更快的定位哪些地方有新增和删减
 
