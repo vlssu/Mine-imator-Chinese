@@ -3,8 +3,8 @@
     "file/": {
         "language": "English",
         "translator": "David & Nimi",
-        "forversion": "1.2.9",
-        "lastchange": "2021.12.13"
+        "forversion": "2.0.0",
+        "lastchange": "2022.05.12"
     },
     "startup/": {
         "caption": "Startup screen",
@@ -68,7 +68,7 @@
         "closetip": "Close this message."
     },
     "error/": {
-        "loadassets": "The Minecraft assets could not be loaded. Try re-installing Mine-imator. See the log for details.",
+        "loadassets": "The Minecraft assets could not be loaded. Try re-installing Mine-imator.",
         "loadassetscaption": "Load assets error",
         "newprojectexists": "The chosen folder already exists. Change it to something else.",
         "newprojectexistscaption": "New project error",
@@ -76,7 +76,7 @@
         "newprojectinvalidcaption": "New project error",
         "newprojectaccess": "The project could not be saved in this location. Try another folder by clicking \"Change\".",
         "newprojectaccesscaption": "New project error",
-        "filecorrupted": "The file has been corrupted or was created in a deprecated version of Mine-imator. See the log for more details. Try loading a backup file if one is available (change the filter in the file browser).",
+        "filecorrupted": "The file has been corrupted or was created in a deprecated version of Mine-imator. Try loading a backup file if one is available (change the filter in the file browser).",
         "filecorruptedcaption": "Corrupted file error",
         "openprojectzip": "No Mine-imator project could be found in this archive.",
         "openprojectzipcaption": "Open project error",
@@ -94,15 +94,17 @@
         "openassetnewercaption": "Import asset error",
         "openkeyframes": "No timeline selected to put the keyframes in! Select a timeline and try again.",
         "openkeyframescaption": "Import asset error",
-        "loadmodel": "Could not load the model. See the log for details.",
+        "loadmodel": "Could not load the model.",
         "loadmodelcaption": "Load model error",
-        "loadschematic": "Could not read the schematic file. See the log for details.",
+        "loadschematic": "Could not read the schematic file.",
         "loadschematiccaption": "Import schematic error",
+        "loadworld": "Could not import from world, it might be deleted or moved to another location.",
+        "loadworldcaption": "Import from world error",
         "unzippack": "Could not unzip the pack.",
         "unzippackcaption": "Import pack error",
         "loadaudio": "An error occurred when importing the audio file.",
         "loadaudiocaption": "Import audio error",
-        "exportmovie": "An error occured when exporting the movie. Check your render settings and make sure the target file isn't opened in another program. See the log for details.",
+        "exportmovie": "An error occured when exporting the movie. Check your render settings and make sure the target file isn't opened in another program.",
         "exportmoviecaption": "Movie export error",
         "upgrade": "Invalid key!",
         "upgradecaption": "Upgrade error",
@@ -117,7 +119,10 @@
         "buffersizewarning": "WARNING: This setting may or may not crash the program when rendering. Only proceed if you think your graphics card and RAM can handle it.\nContinue?",
         "stoprender": "Really stop rendering?",
         "assetsnewer": "These assets require a newer version of Mine-imator to work. Go to the download page for Mine-imator?",
-        "unlimitedvalues": "WARNING: Values will be able to be set outside of their normal limits, which could crash the program, cause project corruption or other undefined behaviour depending on the value being changed.\nContinue?"
+        "unlimitedvalues": "WARNING: Values will be able to be set outside of their normal limits, which could crash the program, cause project corruption or other undefined behaviour depending on the value being changed.\nContinue?",
+        "save": "Save",
+        "dontsave": "Don't save",
+        "cancel": "Cancel"
     },
     "filedialog/": {
         "open/": {
@@ -180,8 +185,7 @@
         "biomes": "Loading biomes...",
         "misc": "Loading misc. assets...",
         "models": "Loading characters...",
-        "blocks": "Loading blocks...",
-        "loadingblock": "Loading block"
+        "blocks": "Loading blocks..."
     },
     "newproject/": {
         "caption": "New project",
@@ -205,6 +209,7 @@
         "benchtip": "Click to open the workbench.",
         "newprojecttip": "Create a new project.",
         "importassettip": "Import an asset (object, keyframes, particles, schematic, sound, image or another animation) into the project.",
+        "importfromworldtip": "Import scenery from an existing Minecraft world.",
         "openprojecttip": "Open an existing project.",
         "saveprojecttip": "Save the current project.",
         "saveprojectastip": "Save the current project as a new copy.",
@@ -254,6 +259,7 @@
         "blocksheet": "Block sheet",
         "particlesheet": "Particle sheet",
         "schematic": "Schematic",
+        "fromworld": "Scenery",
         "texture": "Texture",
         "font": "Font",
         "sound": "Sound"
@@ -326,7 +332,7 @@
         "openeditor": "Open editor",
         "openeditortip": "Open the banner editor popup to change the banner's appearance.",
         "create": "Create",
-        "createtip": "Create a new object using the selected settings."
+        "createtip": "Create a new object using the selected settings and start placing it with the mouse.\n(Shift: Create at 0,0,0)"
     },
     "downloadskin/": {
         "caption": "Download skin",
@@ -488,7 +494,9 @@
         "particlestip": "Toggle particles in the view.",
         "gridtip": "Toggle grid (size changeable in settings).",
         "aspectratiotip": "Toggle aspect ratio of the exported video.",
-        "closetip": "Close this view."
+        "closetip": "Close this view.",
+        "popouttip": "Pop out the view into a new window.",
+        "popbacktip": "Reset the view back into the main window."
     },
     "tab/": {
         "projectproperties": "Project properties",
@@ -502,7 +510,9 @@
         "timelineeditor": "%1 properties",
         "frameeditor": "Frame %1 for %2",
         "settings": "Settings",
-        "closetip": "Close this tab."
+        "closetip": "Close this tab.",
+        "popouttip": "Pop out the tab into a new window.",
+        "popbacktip": "Reset the tab back into the main window."
     },
     "expandcollapsetip": "Hide or show options.",
     "metertip": "(Right click: Reset, Click value: Manual input)",
@@ -559,6 +569,8 @@
         "charnametip": "The name of the model.",
         "blockname": "Name",
         "blocknametip": "The name of the block.",
+        "blockfilter": "Name",
+        "blockfiltertip": "The name of the block.",
         "spblockname": "Name",
         "spblocknametip": "The name of the block.",
         "bodypartmodelname": "Name",
@@ -1092,41 +1104,46 @@
             }
         }
     },
-    "importfromworld/": {
-        "title": "Import scenery from world",
-        "info": "Browse for a Minecraft world or select one from the dropdown list, then left click to create a box around the wished area. Right/Middle click: Move view, Mouse wheel: Zoom.",
-        "topdownview": "Top down view",
-        "crosssectionview": "Cross section view",
-        "noworld": "No world loaded",
+    "worldimport/": {
+        "cancel": "Cancel",
+        "canceltip": "Cancel importing from a world.",
+        "noworld": "No world selected",
         "world": "World",
-        "browse": "Browse...",
-        "browsecaption": "Open Minecraft world",
-        "browseworlds": "Minecraft worlds",
-        "worldunsupported": "This world was created in an unsupported Minecraft version and could not be loaded.",
-        "worldopened": "This world is used by another process, possibly Minecraft. Close it and try again.",
-        "fileopened": "Could not write to file. Check that it's not used by another process.",
-        "noblocks": "No blocks have been selected. Check the selected region and your filter settings (by clicking the Filters button).",
-        "loadingregion": "Loading region...",
+        "error": "There was an issue loading the world. It may be corrupted or created in an unsupported version of Minecraft.",
         "dimension": "Dimension",
         "overworld": "Overworld",
         "nether": "Nether",
-        "end": "End",
-        "done": "Done",
-        "filters": "Filters",
-        "filters/": {
-            "title": "Block filter",
-            "alert": "Some blocks are being filtered!",
-            "activate": "Activate filters",
-            "blockstoremove": "Choose blocks to remove from the selection",
-            "blockstokeep": "Choose blocks to keep in the selection",
-            "add": "Add",
-            "remove": "Remove",
-            "removefiltered": "Remove filtered",
-            "keepfiltered": "Keep filtered",
-            "ok": "OK"
-        },
-        "size": "(%1x%2x%3 (%4 blocks))",
-        "cancel": "Cancel"
+        "end": "The end",
+        "browsetip": "Browse for a world to open if it isn't available in the list.",
+        "browseworlds": "Minecraft worlds",
+        "browsecaption": "Open Minecraft world",
+        "settingstip": "Change world settings.",
+        "reloadtip": "Reload the currently opened world.",
+        "gotoplayertip": "Jump to the player or starting position.",
+        "selection": "Selection",
+        "selectionsmall": "Small",
+        "selectionmedium": "Medium",
+        "selectionlarge": "Large",
+        "blocks": "%1 x %2 x %3 blocks",
+        "filters": "Filters are active",
+        "confirm": "Import selection"
+    },
+    "worldsettings/": {
+        "caption": "World settings",
+        "filterenabled": "Enable block filter",
+        "filterenabledtip": "Activate filtering of the chosen blocks.",
+        "filtermode": "Filter mode",
+        "filterremove": "Remove",
+        "filterremovetip": "The chosen blocks will be hidden in the world.",
+        "filterkeep": "Keep",
+        "filterkeeptip": "The chosen blocks will be the only ones visible in the world.",
+        "filterblocks": "All blocks",
+        "filterfiltered": "Filtered",
+        "filterrighttip": "Add the selected block to the filter.",
+        "filterlefttip": "Remove the selected block from the filter.",
+        "unloadregions": "Unload regions far away",
+        "unloadregionstip": "Regions far away from view will automatically be unloaded to save memory. Disabling this may cause issues with big worlds depending on the available RAM.",
+        "ok": "OK"
     },
     "block/": {
         "stone": "Stone",
@@ -2550,7 +2567,8 @@
         "blocks": "Reading blocks...",
         "model": "Creating 3D model...",
         "pieceof": "Piece of %1",
-        "addtimelines": "%1 blocks were found in the terrain that can be animated.\n\nDo you want to add these as individual timelines? (This could decrease performance)"
+        "addtimelines": "%1 blocks were found in the terrain that can be animated.\n\nDo you want to add these as individual timelines? (This could decrease performance)",
+        "savecache": "Do you want to cache the 3D model of the scenery to instantly load it next time?\n\nThis will require at least %1 of space in the project folder."
     },
     "loadaudio/": {
         "caption": "Importing %1",
@@ -3253,8 +3271,13 @@
         "zisuptip": "The Z axis represents up/down, rather than Y.",
         "smoothcamera": "Smooth work camera",
         "smoothcameratip": "The work camera will ease to a stop when rotating around a point.",
+        "cameralockmouse": "Camera locks mouse",
+        "cameralockmousetip": "Rotating or moving any camera will lock the mouse cursor in place.",
+		"cameralockmousemessage": "Locking the mouse cursor requires added permissions which are given in System Preferences, do you want to continue?",
         "searchvariants": "Search variants in block search",
         "searchvariantstip": "Includes blocks with matching variant names when searching for blocks in the workbench or library.",
+        "placenew": "Place newly added objects using the cursor",
+        "placenewtip": "Newly added objects will be locked to the cursor for placing them in the scene. If disabled, all objects will spawn at 0,0,0.",
         "controls": "Controls",
         "controlstip": "Change the keyboard controls used in the program.",
         "interfaceshortcuts": "Interface shortcuts",
@@ -3348,8 +3371,8 @@
         "bendstyleblockytip": "Enables a blocky style for bent arms and legs.",
         "schematicaddtimelines": "Add block timelines to schematics",
         "schematicaddtimelinestip": "Whether to add timelines of certain blocks in imported schematics.",
-        "schematicremoveedges": "Remove edges of big schematics",
-        "schematicremoveedgestip": "The edges of schematics will be removed to optimize rendering times.",
+        "schematicremoveedges": "Remove edges of big scenery",
+        "schematicremoveedgestip": "The edges of big scenery which is normally out of view will be removed to optimize memory usage.",
         "liquidanimation": "Water/Lava wave animation",
         "liquidanimationtip": "Enable a wave animation for water and lava.",
         "noisygrasswater": "Noise effect on grass/water",
