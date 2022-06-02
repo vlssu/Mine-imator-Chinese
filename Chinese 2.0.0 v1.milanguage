@@ -185,7 +185,7 @@
         "biomes": "加载生物群系...",
         "misc": "加载misc. assets...",
         "models": "加载特性...",
-        "blocks": "加载方块...",
+        "blocks": "加载方块..."
     },
     "newproject/": {
         "caption": "新工程",
@@ -2511,7 +2511,7 @@
 		"jagged_peaks": "尖峭山峰",
 		"frozen_peaks": "冰封山峰",
 		"stony_peaks": "裸岩山峰",
-        "the_void": "虚空",
+        "the_void": "虚空"
     },
     "resources": "资源",
     "resourcestip": "管理导入的资源文件。",

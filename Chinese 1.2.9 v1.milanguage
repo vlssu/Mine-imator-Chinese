@@ -2494,7 +2494,7 @@
 		"jagged_peaks": "尖峭山峰",
 		"frozen_peaks": "冰封山峰",
 		"stony_peaks": "裸岩山峰",
-        "the_void": "虚空",
+        "the_void": "虚空"
     },
     "resources": "资源",
     "resourcestip": "管理导入的资源文件。",
