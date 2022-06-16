@@ -4,7 +4,7 @@
         "language": "English",
         "translator": "David & Nimi",
         "forversion": "2.0.0",
-        "lastchange": "2022.05.12"
+        "lastchange": "2022.06.07"
     },
     "startup/": {
         "caption": "Startup screen",
@@ -419,7 +419,7 @@
             "seconds": "%1 seconds"
         },
         "loading": "%1% done",
-        "stop": "Hold Escape to stop rendering."
+        "stop": "Press Escape to stop rendering."
     },
     "exportimage/": {
         "caption": "Export image",
@@ -3196,6 +3196,10 @@
         "unlimitedvaluestip": "Let values have the ability to be set outside of their set limits.",
         "interface": "Interface",
         "interfacetip": "Change settings about the interface.",
+		"interfacescaleauto": "Automatically scale interface",
+		"interfacescaleautotip": "Scale the interface by the system's DPI (Dots per inch) setting.",
+		"interfacescale": "Scale",
+		"interfacescaletip": "The custom scale of the interface.",
         "tipshow": "Show tips",
         "tipshowtip": "Show helpful tips when hovering the cursor over controls.",
         "tipdelay": "Delay",
@@ -3364,6 +3368,8 @@
         "slowmodifiertip": "The camera speed modifier when going slower.",
         "graphics": "Graphics",
         "graphicstip": "Modify the appearence of objects and textures in animations.",
+		"renderdistance": "Render distance",
+		"renderdistancetip": "The distance where rendered objects are cut off. A higher value will allow bigger scenes but may cause clipping on nearby objects.",
         "bendstyle": "Arm/Legs bending style",
         "bendstylerealistic": "Realistic",
         "bendstylerealistictip": "Enables a realistic style with a pinch effect for bent arms and legs.",
