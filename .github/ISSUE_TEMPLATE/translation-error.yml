@@ -1,0 +1,21 @@
+name: 汉化错误
+description: 创建报告以帮助我们改进
+body:
+  - type: input
+    id: mi
+    attributes:
+      label: Mine-imator 版本
+    validations:
+      required: true
+  - type: textarea
+    id: error
+    attributes:
+      label: 汉化错误文本
+      description: 将错误文本复制在这
+      render: text
+  - type: textarea
+    id: rectify
+    attributes:
+      label: 纠正后文本
+      description: 将纠正后的文本复制在这
+      render: text
