@@ -11,11 +11,11 @@ body:
     id: error
     attributes:
       label: 汉化错误文本
-      description: 将错误文本复制在这并用代码块
+      description: 将错误文本复制在这
       render: text
   - type: textarea
     id: rectify
     attributes:
       label: 纠正后文本
-      description: 将纠正后的文本复制在这并用代码块
+      description: 将纠正后的文本复制在这
       render: text
