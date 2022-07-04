@@ -1,3 +1,7 @@
+![GitHub Stars](https://img.shields.io/github/stars/vlssu/Mine-imator-Chinese?style=for-the-badge)
+![Github Licenses](https://img.shields.io/github/license/vlssu/Mine-imator-Chinese?style=for-the-badge&logo=appveyor)
+![GitHub Releases](https://img.shields.io/github/v/release/vlssu/Mine-imator-Chinese.svg?style=for-the-badge&logo=appveyor)
+![Alt](https://repobeats.axiom.co/api/embed/09440c0faff6a967066df1dd4e03c19a5f0421b3.svg "Repobeats analytics image")
 # Mine-imator 简体中文汉化
 
 Mine-imator翻译
