@@ -1,6 +1,6 @@
 {
-	"format": 31,
-	"created_in": "1.2.3",
+	"format": 34,
+	"created_in": "2.0 (Alpha 29)",
 	"particles": {
 		"spawn_constant": true,
 		"spawn_amount": 300,
@@ -9,6 +9,7 @@
 		"spawn_region_sphere_radius": 100,
 		"spawn_region_cube_size": 200,
 		"spawn_region_box_size": [ 200, 200, 200 ],
+		"spawn_region_path_radius": 8,
 		"bounding_box_type": "ground",
 		"bounding_box_ground_z": 0,
 		"bounding_box_custom_start": [ -100, -100, -100 ],
@@ -25,8 +26,8 @@
 		"destroy_at_bounding_box": 0,
 		"types": [
 			{
-				"id": "V8174T1O1A68J0P6",
-				"name": "Particle 1",
+				"id": "YOURFIRSTPARTICL",
+				"name": "particle_1",
 				"temp_type": "template",
 				"text": "Sample text",
 				"spawn_rate": 1,
