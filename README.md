@@ -8,6 +8,7 @@
 ---
 ### 译文文件
 
+* [`1.2.6`](./translations/1.2.6/chinese.milanguage)
 * [`1.2.7`](./translations/1.2.7/chinese.milanguage)
 * [`1.2.8`](./translations/1.2.8/chinese.milanguage)
 * [`1.2.9`](./translations/1.2.9/chinese.milanguage)
