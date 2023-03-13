@@ -714,17 +714,17 @@
 			"render": "渲染模式",
 			"pass": "渲染通道",
 			"pass/": {
-				"combined": "Combined",
-				"depth": "Depth (24bit)",
+				"combined": "综合",
+				"depth": "深度 (24bit)",
 				"normal": "Normal",
 				"material": "Material",
-				"diffuse": "Diffuse",
-				"specular": "Specular",
-				"ao": "Ambient occlusion",
-				"shadows": "Shadows",
-				"indirect": "Indirect",
-				"indirectshadows": "Indirect & shadows",
-				"reflections": "Reflections"
+				"diffuse": "扩散",
+				"specular": "折射",
+				"ao": "环境光遮蔽",
+				"shadows": "阴影",
+				"indirect": "间接",
+				"indirectshadows": "间接 & 阴影",
+				"reflections": "反射"
 			}
 		},
 		"camera/": {
@@ -2128,7 +2128,7 @@
 			"blurradius": "降噪半径",
 			"strength": "强度"
 		},
-		"reflections": "Reflections",
+		"reflections": "反射",
 		"reflections/": {
 			"precision": "精度",
 			"precisiontip": "光线追踪反射的精度，精度越高越慢。",
