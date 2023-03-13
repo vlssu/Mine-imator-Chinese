@@ -5,7 +5,7 @@
 		"locale": "zh-CN",
 		"translator": "飒爽师叔",
 		"forversion": "2.0",
-		"lastchange": "2023.03.13"
+		"lastchange": "2022.11.22"
 	},
 	"particle/": {
 		"default": "默认粒子",
@@ -125,9 +125,7 @@
 			"setdefault": "设置为默认设置",
 			"reset": "重置设置"
 		},
-		"linkeaseinout": "链接缓入/缓出",
-		"importwatermarkimage": "导入水印图片",
-		"resetwatermarkimage": "重置水印图片"
+		"linkeaseinout": "链接缓入/缓出"
 	},
 	"contextmenu/": {
 		"textbox/": {
@@ -204,7 +202,7 @@
 		"pathsetlength": "设置路径长度"
 	},
 	"shortcut/": {
-		"select": "选择时间轴",
+		"select": "选择实例",
 		"orbit": "轨迹视图",
 		"pan": "平视图",
 		"zoom": "缩放",
@@ -223,7 +221,7 @@
 		"reset": "重置",
 		"scrollhorizontal": "水平滚动",
 		"scrollvertical": "垂直滚动",
-		"viewtimeline": "查看时间轴",
+		"viewinstance": "查看实例",
 		"tl/": {
 			"settime": "设置播放时间",
 			"setregion": "选择播放区域",
@@ -461,9 +459,9 @@
 			"undo": "撤消",
 			"redo": "重做",
 			"selectall": "全选",
-			"duplicate": "复制时间轴",
-			"delete": "删除时间轴",
-			"hide": "隐藏时间轴",
+			"duplicate": "复制实例",
+			"delete": "删除实例",
+			"hide": "隐藏实例",
 			"showhidden": "显示隐藏",
 			"preferences": "首选项..."
 		},
@@ -477,7 +475,6 @@
 			"reset": "重置工作摄像头",
 			"secondaryview": "显示辅助视图",
 			"shortcutsbar": "显示快捷方式栏",
-			"home": "主屏幕",
 			"timeline/": {
 				"compact": "紧凑的时间轴视图",
 				"showmarkers": "显示时间线标记",
@@ -598,8 +595,38 @@
         "save": "保存",
 		"copy": "%1 copy"
 	},
-	"export/": {
-		"samples": "样本 %1，总共 %2",
+	"exportmovie/": {
+		"title": "正在导出您的影片...",
+        "caption": "视频导出选项",
+        "videosize": "视频尺寸",
+		"videosizecustomwidth": "W",
+		"videosizecustomheight": "H",
+		"videosizecustomkeepaspectratio": "保存比例",
+		"format": "格式",
+		"format/": {
+			"mp4": "MP4",
+			"mov": "MOV",
+			"wmv": "WMV",
+			"png": "PNG 图片序列"
+		},
+		"videoquality": "视频画质",
+		"videoquality/": {
+            "verylow": "非常差",
+            "low": "差",
+            "medium": "中等",
+            "high": "高",
+            "best": "最高",
+            "custom": "自定义"
+		},
+        "bitrate": "比特率",
+		"framerate": "帧率",
+		"includeaudio": "导出音频",
+		"removebackground": "移除背景",
+		"blendmodewarning": "对象上的自定义混合模式可能无法正确渲染。",
+		"includehidden": "包含被隐藏的对象",
+		"highquality": "高品质渲染",
+		"watermark": "显示水印",
+		"save": "保存",
 		"frame": "第 %1 帧, 总共 %2 帧",
 		"timeleft": "剩余时间: %1",
 		"timeleft/": {
@@ -612,60 +639,26 @@
             "seconds": "%1 秒"
 		},
 		"stop": "按 Esc键 取消",
-		"loading": "%1% 完成",
-		"movie/": {
-			"title": "正在导出您的影片...",
-			"caption": "视频导出选项",
-			"videosize": "视频尺寸",
-			"videosizecustomwidth": "W",
-			"videosizecustomheight": "H",
-			"videosizecustomkeepaspectratio": "保存比例",
-			"format": "格式",
-			"format/": {
-				"mp4": "MP4",
-				"mov": "MOV",
-				"wmv": "WMV",
-				"png": "PNG 图片序列"
-			},
-			"videoquality": "视频画质",
-			"videoquality/": {
-				"verylow": "非常差",
-				"low": "差",
-				"medium": "中等",
-				"high": "高",
-				"best": "最高",
-				"custom": "自定义"
-			},
-			"bitrate": "比特率",
-			"framerate": "帧率",
-			"includeaudio": "导出音频",
-			"removebackground": "移除背景",
-			"blendmodewarning": "对象上的自定义混合模式可能无法正确渲染。",
-			"includehidden": "包含被隐藏的对象",
-			"highquality": "高品质渲染",
-			"watermark": "显示水印",
-			"save": "保存"
-		},
-		"image/": {
-			"title": "正在导出您的图像...",
-			"caption": "图像输出选项",
-			"imagesize": "图像尺寸",
-			"imagesizecustomwidth": "W",
-			"imagesizecustomheight": "H",
-			"imagesizecustomkeepaspectratio": "保持横纵比",
-			"includehidden": "包含隐藏对象",
-			"removebackground": "移除背景",
-			"blendmodewarning": "对象上的自定义混合模式可能无法正确渲染。",
-			"highquality": "高品质渲染",
-			"watermark": "显示水印",
-			"save": "保存",
-			"cancel": "取消"
-		}
+		"loading": "%1% 完成"
+	},
+	"exportimage/": {
+        "caption": "图像输出选项",
+        "imagesize": "图像尺寸",
+		"imagesizecustomwidth": "W",
+		"imagesizecustomheight": "H",
+		"imagesizecustomkeepaspectratio": "保持横纵比",
+		"includehidden": "包含隐藏对象",
+		"removebackground": "移除背景",
+		"blendmodewarning": "对象上的自定义混合模式可能无法正确渲染。",
+		"highquality": "高品质渲染",
+		"watermark": "显示水印",
+		"save": "保存",
+		"cancel": "取消"
 	},
 	"upgrade/": {
 		"caption": "升级",
 		"info": "您目前正在使用 Mine-imator 的试用版。要解锁更多高级功能，请从下面的链接获取升级密钥，然后在此处输入。",
-		"page0": "水印可以自定义。",
+		"page0": "可以关闭水印。",
 		"page1": "解锁“高级模式”并访问所有可用功能。",
 		"page2": "在项目中自定义您自己的渲染设置。",
 		"continue": "升级"
@@ -777,7 +770,7 @@
         "particles": "粒子效果 %1",
         "ground": "地面",
         "timelineeditor": "%1 属性",
-		"frameeditor": "%1 (帧 %2)",
+		"frameeditor": "%1 (关键帧 %2)",
 		"settings": "首选项"
 	},
 	"key/": {
@@ -852,10 +845,12 @@
         "mooshroom": "哞菇",
         "pig": "猪",
         "sheep": "绵羊",
+        "sheep_sheared": "剪了毛的羊",
         "rabbit": "兔子",
         "squid": "鱿鱼",
         "cat": "豹猫",
         "wolf": "狼",
+        "wolf_tame": "驯服的狼",
         "parrot": "鹦鹉",
         "polar_bear": "北极熊",
         "horse": "马",
@@ -866,14 +861,13 @@
         "llama": "羊驼",
         "villager": "村民",
         "illager": "刌民",
-		"evoker": "唤魔者",
-		"vindicator": "卫道士",
         "evoker_fangs": "唤魔者尖牙",
         "vex": "恼鬼",
         "zombie_villager": "僵尸村民",
         "witch": "女巫",
         "iron_golem": "铁傀儡",
         "snow_golem": "雪傀儡",
+        "snowman": "雪人",
         "silverfish": "蠹虫",
         "bat": "蝙蝠",
         "blaze": "烈焰人",
@@ -895,22 +889,20 @@
         "chest_double": "大型箱子",
         "lever": "拉杆",
         "piston": "活塞",
-        "sign": "告示牌",
-        "standing_sign": "站立的告示牌",
-        "wall_sign": "墙上的告示牌",
-		"hanging_sign": "悬挂式告示牌",
-		"wall_hanging_sign": "墙上的悬挂式告示牌",
+        "sign": "木牌",
+        "standing_sign": "站立的木牌",
+        "wall_sign": "靠墙的木牌",
         "arrow": "箭",
         "shield": "盾牌",
         "elytra": "鞘翅",
         "boat": "船",
-		"raft": "筏",
         "minecart": "矿车",
         "tripwire_hook": "绊线勾",
         "end_crystal": "末影水晶",
         "mob_head": "生物头颅",
-		"piglin_head": "猪灵头",
         "dragon_head": "龙首",
+        "mob_wall_head": "墙上的生物头颅",
+        "dragon_wall_head": "墙上的龙首",
         "banner": "旗帜",
         "standing_banner": "竖立的旗帜",
         "wall_banner": "挂在墙上的旗帜",
@@ -929,7 +921,6 @@
         "wandering_trader": "流浪商人",
         "bee": "蜜蜂",
         "piglin": "猪灵",
-		"piglin_brute": "猪灵蛮兵",
         "zombified_piglin": "僵尸猪灵",
         "hoglin": "疣猪兽",
         "zoglin": "僵尸疣猪兽",
@@ -944,7 +935,6 @@
 		"tadpole": "蝌蚪",
 		"allay": "悦灵",
 		"warden": "监守者",
-		"camel": "骆驼",
 		"fence_gate": "栅栏门",
 		"part/": {
             "body": "身体",
@@ -992,7 +982,6 @@
             "mouth_lower": "下腭",
             "mouth_upper": "上腭",
             "halter": "笼头",
-			"reins": "缰绳",
             "right_rein": "右缰绳",
             "left_rein": "左缰绳",
             "neck": "颈部",
@@ -1087,7 +1076,6 @@
             "arrow": "箭",
             "shield": "盾牌",
             "boat": "船",
-			"raft": "筏",
             "right_paddle": "右船桨",
             "left_paddle": "左船桨",
             "minecart": "矿车",
@@ -1149,8 +1137,7 @@
 			"right_ribs": "右肋骨",
 			"left_ribs": "左肋骨",
 			"right_door": "右门",
-			"left_door": "左门",
-			"post": "Post"
+			"left_door": "左门"
 		},
 		"state/": {
             "variant": "类型",
@@ -1169,6 +1156,7 @@
             "pattern_color": "花纹颜色",
             "open": "激活",
             "arms": "手臂",
+			"hanging": "悬挂连接",
             "profession": "职业",
             "biome": "群系",
             "profession_level": "职业等级",
@@ -1177,20 +1165,10 @@
             "character": "特点",
 			"targeting": "位置",
 			"type": "类型",
-			"pumpkin": "南瓜",
 			"has_pattern": "有花纹",
 			"value/": {
 				"steve": "Steve",
 				"alex": "Alex",
-				"zuri": "Zuri",
-				"sunny": "Sunny",
-				"noor": "Noor",
-				"makena": "Makena",
-				"kai": "Kai",
-				"efe": "Efe",
-				"ari": "Ari",
-				"wide": "Wide",
-				"slim": "Slim",
                 "zombie": "僵尸",
                 "husk": "尸壳",
                 "drowned": "溺尸",
@@ -1358,8 +1336,6 @@
                 "prismarine": "Prismarine",
                 "turtle": "Turtle",
                 "birthday": "Birthday",
-				"valentine": "Valentine",
-				"vanilla": "Vanilla",
                 "spectral": "金箭",
                 "tipped": "普通箭",
                 "squid": "鱿鱼",
@@ -1371,10 +1347,7 @@
 				"warm": "Warm",
 				"charging": "Charging",
 				"invulnerable": "Invulnerable",
-				"mangrove": "Mangrove",
-				"bamboo": "Bamboo",
-				"hanging": "Hanging",
-				"attached": "Attached"
+				"mangrove": "Mangrove"
 			}
 		}
 	},
@@ -1462,7 +1435,7 @@
         "torch": "火把",
         "wall_torch": "被放置的火把",
         "fire": "火",
-        "spawner": "刷怪笼",
+        "spawner": "刷怪箱",
         "stairs": "楼梯",
         "chest": "箱子",
         "redstone_wire": "红石线路",
@@ -1477,8 +1450,6 @@
         "ladder": "梯子",
         "rail": "铁轨",
         "wall_sign": "墙上的告示牌",
-		"hanging_sign": "悬挂式告示牌",
-		"wall_hanging_sign": "墙上的悬挂式告示牌",
         "lever": "拉杆",
         "pressure_plate": "石质压力板",
         "redstone_ore": "红石矿石",
@@ -1690,7 +1661,6 @@
 		"froglight": "蛙明灯",
 		"frogspawn": "青蛙卵",
 		"reinforced_deepslate": "强化深板岩",
-		"chiseled_bookshelf": "錾刻的书架(译文未确定)",
 		"state/": {
             "variant": "类型",
             "snowy": "积雪",
@@ -1760,12 +1730,6 @@
             "character": "性格",
 			"bloom": "催发",
 			"can_summon": "能召唤",
-			"slot_0_occupied": "拥有第一本书",
-			"slot_1_occupied": "拥有第二本书",
-			"slot_2_occupied": "拥有第三本书",
-			"slot_3_occupied": "拥有第四本书",
-			"slot_4_occupied": "拥有第五本书",
-			"slot_5_occupied": "拥有第六本书",
 			"value/": {
                 "true": "是",
                 "false": "否",
@@ -2048,9 +2012,7 @@
 				"mud_bricks": "泥砖",
 				"ochre": "赭黄蛙明灯",
 				"pearlescent": "珠光蛙明灯",
-				"verdant": "青翠蛙明灯",
-				"bamboo_block": "竹块",
-				"bamboo_mosaic": "竹马赛克"
+				"verdant": "青翠蛙明灯"
 			}
 		}
 	},
@@ -2075,11 +2037,9 @@
 		"videosizecustomwidth": "W",
 		"videosizecustomheight": "H",
 		"videosizecustomkeepaspectratio": "保存比例",
-		"rendersettings": "预设",
+		"rendersettings": "渲染设置",
 		"rendersettings/": {
-			"performance": "性能",
-			"balanced": "均衡",
-			"extreme": "极致",
+			"default": "默认",
 			"custom": "自定义"
 		},
 		"tempo": "速度",
@@ -2088,8 +2048,16 @@
 	"render": "渲染设置",
 	"render/": {
 		"samples": "示例",
+		"samples/": {
+			"0": "为更快的渲染而牺牲质量。",
+			"1": "建议在质量和渲染时间之间取得平衡。",
+			"2": "提高质量，渲染时间可能会更长。",
+			"3": "延长渲染时间，仅在您的显卡可以处理时使用。",
+			"4": "渲染时间会很长，只有在你的显卡可以处理的情况下才使用。"
+		},
 		"distance": "渲染距离",
 		"distancetip": "渲染对象被截断的距离。也决定了最大的雾化距离。",
+		"dofquality": "景深品质",
 		"ssao": "环境光遮蔽",
 		"ssaotip": "使曝光较少的区域变暗的效果。",
 		"ssao/": {
@@ -2115,13 +2083,10 @@
 		"subsurfacescatteringtip": "模拟穿过物体(如树叶)的光。",
 		"subsurfacescatter/":
 		{
-			"quality": "模糊质量",
-			"highlight": "高亮",
-			"highlighttip": "当光源直接在物体后面时，在物体中分布额外的光。",
-			"highlightstrength": "高光强度"
+			"quality": "模糊质量"
 		},
 		"indirect": "间接光照",
-		"indirecttip": "反射明亮物体的光，照亮更多场景。",
+		"indirecttip": "模拟光线从物体上反射回来。这允许发光材料照亮场景。",
 		"indirect/": {
 			"precision": "精度",
 			"precisiontip": "光线反射的光线追踪精度，精度越高速度越慢。",
@@ -2154,33 +2119,25 @@
 		"aa": "抗锯齿",
 		"aatip": "使最终渲染中的对象边缘平滑。",
 		"aapower": "强度",
+		"cameraeffects": "摄像机效果",
 		"modelsscenery": "模型和场景",
 		"bendstyle": "肢体弯曲方式",
 		"bendstylerealistic": "逼真",
 		"bendstyleblocky": "块状",
+		"randomblocks": "随机区块模型",
 		"opaqueleaves": "树叶不透明度",
 		"liquidanimation": "液体波浪",
-		"waterreflections": "默认水反射",
-		"waterreflectionshelp": "使用默认的反光水材质覆盖水块。",
-		"defaultemissive": "默认自发光",
-		"defaultemissivetip": "用于特定亮块或具有材质贴图集的阈值。",
-		"defaultsubsurfaceradius": "默认次表面",
-		"defaultsubsurfaceradiustip": "用于植被块或具有 LabPBR 材质贴图集的次表面半径。",
+		"blockemissive": "发光块自发光",
+		"blockglow": "发光明亮的方块和模型",
+		"blockglowthreshold": "发光色阈值",
+		"blocksubsurfaceradius": "方块次表面半径",
 		"alphamode": "默认 alpha 模式",
 		"alphamode/": {
 			"blend": "混合",
 			"hashed": "散列",
 			"default": "默认"
 		},
-		"lightmanagement": "光照管理",
-		"tonemapper": "色调贴图",
-		"tonemapper/": {
-			"none": "无",
-			"reinhard": "Reinhard",
-			"aces": "Academy (ACES)"
-		},
-		"exposure": "曝光",
-		"gamma": "伽马",
+		"gammacorrect": "伽马校正",
 		"materialmaps": "Object 材质贴图",
 		"materialmapstip": "为对象启用材质和法线贴图纹理设置。"
 	},
@@ -2219,8 +2176,6 @@
 		"bodypartskinmaterial": "材质贴图",
 		"bodypartskinnormal": "法线贴图",
         "bodypartunknown": "未知的身体部件",
-		"randomizeblocks": "随机方块",
-		"randomizeblockshelp": "对块使用随机模型和方块旋转。",
         "repeat": "平铺",
 		"repeatx": "X",
 		"repeaty": "Y",
@@ -2487,10 +2442,10 @@
 		"b": "B",
 		"h": "H",
 		"s": "S",
-		"v": "V",
+		"l": "L",
 		"hex": "Hex",
 		"rgb": "RGB",
-		"hsv": "HSV"
+		"hsl": "HSL"
 	},
 	"background": "环境",
 	"background/": {
@@ -2575,8 +2530,6 @@
 			"sky": "天空雾",
 			"colorcustom": "自定义雾色",
 			"color": "雾色",
-			"customobjectcolor": "自定义对象颜色",
-			"objectcolor": "对象雾色",
 			"distance": "距离",
 			"size": "浓度",
 			"height": "高度"
@@ -2695,15 +2648,12 @@
 		},
 		"itemsheetsizerows": "行",
 		"itemsheetsizecolumns": "列",
-		"sceneryrandomize": "随机方块",
-		"sceneryrandomizehelp": "为场景方块使用随机模型和旋转。",
 		"scenerystructurepalette": "调色板",
 		"scenerystructurepalettenumber": "调色板 %1",
 		"scenerystructureintegrity": "完整性",
 		"scenerystructureintegrityinvert": "反转完整性过滤器",
-		"materialformat": "材质贴图格式",
-		"materialformatlabpbr": "LabPBR",
-		"materialformatseus": "OldPBR / SEUS",
+		"usesglossiness": "使用光面材料",
+		"usesglossinesstip": "如果此资源用作材质，粗糙度值将被翻转。",
 		"filename": "文件名"
 	},
 	"loadscenery/": {
@@ -2987,15 +2937,6 @@
 		"camera": "摄像机",
 		"camera/": {
 			"fov": "视界",
-			"lightmanagement": "光照管理",
-			"tonemapper": "色调贴图",
-			"tonemapper/": {
-				"none": "无",
-				"reinhard": "Reinhard",
-				"aces": "Academy (ACES)"
-			},
-			"exposure": "曝光",
-			"gamma": "伽马",
 			"aperture": "光圈设置",
 			"aperturetip": "控制相机的光圈设置以更改某些效果的行为方式。",
 			"bladeamount": "叶片",
@@ -3180,22 +3121,10 @@
 		"backuptime": "备份时间间隔",
 		"backuptimeminutes": " 分钟",
 		"backupamount": "最大备份",
-		"watermark": "Custom watermark",
-		"watermark/": {
-			"imagelocation": "图片位置",
-			"none": "图片未选中",
-			"alignment": "对准",
-			"halign": "水平",
-			"valign": "垂直",
-			"padding": "填充",
-			"scale": "比例尺",
-			"opacity": "不透明度"
-		},
 		"spawncameras": "将工作摄像机复制到新摄像机",
 		"unlimitedvalues": "允许无限值",
 		"sceneryremoveedges": "删除大场景的边缘",
 		"interface": "界面",
-		"appearance": "外貌",
 		"theme": "主题",
 		"theme/": {
             "light": "白色",
@@ -3204,25 +3133,15 @@
 		},
 		"accentcolor": "强调色",
 		"language": "语言",
-		"compact": "紧密面板",
-		"compacttimeline": "紧凑的时间线列表",
-		"reducedmotion": "减少运动量",
-		"timeline": "时间线",
-		"timeline/": {
-			"autoscroll": "播放动画时自动滚动",
-			"selectjump": "跳转到时间线列表中的所选对象",
-			"framesnap": "捕捉回放标记",
-			"framesnaptip": "播放时将动画对齐帧。"
-		},
-		"tools": "工具",
-		"viewport": "视图",
+		"timelineautoscroll": "播放动画时自动滚动",
+		"timelineselectjump": "跳转到时间轴列表中的选定对象",
+		"timelineframesnap": "捕捉回放标记",
+		"timelineframesnaptip": "播放时将进度动画对齐帧。",
 		"zisup": "使用Z轴作为垂直轴",
-		"workbench": "工作台",
 		"searchvariants": "在方块搜索中搜索变体",
 		"separatetoolmodes": "分离工具模式",
 		"separatetoolmodestip": "在不同的窗口工具之间切换，而不是将工具一起切换。",
-		"gizmosfacecamera": "视图控件总是面对相机",
-		"fadegizmos": "淡化视图控件",
+		"gizmosfacecamera": "Gizmos 总是面对相机",
 		"cameralockmouse": "相机锁定鼠标",
         "cameralockmousetip": "旋转或移动任何相机都会将鼠标光标锁定在适当的位置。",
 		"cameralockmousemessage": "锁定鼠标光标需要添加系统偏好设置中提供的权限，您要继续吗？",
@@ -3251,11 +3170,11 @@
 			"importasset": "导入资源",
 			"undo": "撤消",
 			"redo": "重做",
-			"timeline/": {
-				"delete": "删除时间轴",
-				"duplicate": "复制时间轴",
-				"select": "选择所有时间轴",
-				"hide": "隐藏时间轴",
+			"instance/": {
+				"delete": "删除实例",
+				"duplicate": "复制实例",
+				"select": "选择所有实例",
+				"hide": "隐藏实例",
 				"showhidden": "显示隐藏"
 			},
 			"createfolder": "创建文件夹",
@@ -3295,7 +3214,7 @@
 				"rollreset": "重置滚",
 				"fast": "更快",
 				"slow": "更慢",
-				"viewtimeline": "查看时间轴"
+				"viewinstance": "查看实例"
 			},
 			"secondaryview": "次要视图"
 		},
