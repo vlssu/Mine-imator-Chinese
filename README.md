@@ -15,7 +15,7 @@
 * [`2.0.0`](./translations/2.0.0/chinese.milanguage)
   * [`Pre 1`](./translations/2.0.0/Pre1/chinese.milanguage)
   * [`Pre 2-4`](./translations/2.0.0/Pre2-4/chinese.milanguage)
-  * [`Pre 5`](./translations/2.0.0/Pre5/chinese.milanguage)
+  * [`Pre 5-7`](./translations/2.0.0/Pre5-7/chinese.milanguage)
 
 ---
 
