@@ -132,8 +132,8 @@
             "project": "Mine-imator 工程",
             "backup": "Mine-imator 工程备份",
             "projectcaption": "打开工程",
-            "scenery": "Minecraft scenery",
-            "scenerycaption": "打开Minecraft 场景",
+            "scenery": "Minecraft 场景",
+            "scenerycaption": "打开 Minecraft 场景",
             "particles": "粒子发生器",
             "particlecaption": "打开粒子发生器",
             "font": "字体文件",
@@ -2246,7 +2246,7 @@
     },
     "biome/": {
         "custom": "自定义",
-        "normal": "正常的",
+        "normal": "默认",
         "ocean": "海洋",
         "deep_ocean": "深海",
         "frozen_ocean": "冻洋",
@@ -2899,7 +2899,7 @@
         "sound": "声音",
         "soundtip": "更改音频剪辑的设置。",
         "sound/": {
-            "volume": "体积",
+            "volume": "音量",
             "volumetip": "更改此音频剪辑的音量。数值是原始音频文件的音量的百分比。",
             "start": "开始时间",
             "starttip": "设置开始播放此音频剪辑时，实际音频文件中的开始位置。",

@@ -15,11 +15,12 @@
   * [`Pre 1`](./translations/2.0.0/Pre1/chinese.milanguage)
   * [`Pre 2-4`](./translations/2.0.0/Pre2-4/chinese.milanguage)
   * [`Pre 5-7`](./translations/2.0.0/Pre5-7/chinese.milanguage)
+* [`2.0.1`](./translations/2.0.1/chinese.milanguage)
 
 ---
 
 > 我会将我翻译的文件上传到这里，也方便我自己进行新旧文本差异，让我更快的定位哪些地方有新增和删减  
-如果翻译有误欢迎告诉我，你可以直接修改然后合并到我的仓库  
+如果翻译有误欢迎告诉我，当然你可以直接修改然后合并到我的仓库~  
 软件作者网站 <http://www.mineimator.com/>  
 汉化作者(飒爽师叔)的博客 <https://blog.vlssu.com/>
 
