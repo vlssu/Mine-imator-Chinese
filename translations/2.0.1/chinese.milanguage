@@ -254,7 +254,7 @@
 		}
 	},
 	"startup/": {
-        "trial": "TRIAL",
+        "trial": "试用版",
 		"version": "v %1",
 		"newproject": "新工程",
 		"browse": "浏览...",

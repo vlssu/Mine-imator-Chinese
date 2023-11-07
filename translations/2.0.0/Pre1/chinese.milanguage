@@ -8,8 +8,8 @@
     },
     "startup/": {
         "caption": "打开中",
-        "trial": "TRIAL",
-        "full": "FULL",
+        "trial": "试用版",
+        "full": "完整版",
         "version": "%1 版本说明 %2, 发布的信息 %3",
         "credits1": "制作 ",
         "credits1tip": "点我看David网页.",

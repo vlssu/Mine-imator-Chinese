@@ -248,8 +248,8 @@
 		}
 	},
 	"startup/": {
-        "trial": "TRIAL",
-        "full": "FULL",
+        "trial": "试用版",
+        "full": "完整版",
 		"version": "v %1",
 		"newproject": "新工程",
 		"browse": "浏览...",
