@@ -2825,7 +2825,7 @@
             "texttip": "该对象应显示的文本片段(如果不为空，将覆盖时间线设置)。",
             "font": "字体",
             "fonttip": "更改使用的字体，常规的Minecraft字体或TTF字体文件。",
-            "alignment": "对准",
+            "alignment": "对齐",
             "halign": "卧式",
             "haligntip": "文本的水平对齐方式。",
             "valign": "垂直",

@@ -167,10 +167,10 @@
 				"export": "导出关键帧",
 				"select": "选择关键帧...",
 				"select/": {
-					"before": "在标记之前",
-					"after": "After marker",
-					"first": "首先在时间轴上",
-					"last": "时间轴上的最后一个",
+					"before": "在标记之前所有关键帧",
+					"after": "在标记之后所有关键帧",
+					"first": "第一帧",
+					"last": "最后一帧",
 					"region": "在选定的区域"
 				},
 				"walk": "创建步行周期",
@@ -3180,11 +3180,11 @@
 		"backuptime": "备份时间间隔",
 		"backuptimeminutes": " 分钟",
 		"backupamount": "最大备份",
-		"watermark": "Custom watermark",
+		"watermark": "显示水印",
 		"watermark/": {
 			"imagelocation": "图片位置",
 			"none": "图片未选中",
-			"alignment": "对准",
+			"alignment": "对齐",
 			"halign": "水平",
 			"valign": "垂直",
 			"padding": "填充",
