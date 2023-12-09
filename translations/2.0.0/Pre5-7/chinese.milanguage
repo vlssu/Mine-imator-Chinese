@@ -1182,7 +1182,7 @@
                 "brown_mooshroom": "棕色哞菇",
                 "true": "是",
                 "false": "否",
-                "black": "黑色(西服猫)",
+                "black": "黑色",
                 "brown": "棕色",
                 "caerbannog": "杀手兔",
                 "gold": "金色",
@@ -2047,7 +2047,7 @@
 	},
 	"render": "渲染设置",
 	"render/": {
-		"samples": "示例",
+		"samples": "采样",
 		"samples/": {
 			"0": "为更快的渲染而牺牲质量。",
 			"1": "建议在质量和渲染时间之间取得平衡。",
