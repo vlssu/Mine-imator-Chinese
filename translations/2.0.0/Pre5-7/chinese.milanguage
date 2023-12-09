@@ -502,7 +502,7 @@
 		"item": "物品",
 		"block": "方块",
 		"spblock": "特殊方块",
-		"bodypart": "身体部分",
+		"bodypart": "角色组件",
 		"particles": "粒子生成器",
 		"text": "文本",
 		"cube": "方块",
@@ -554,7 +554,7 @@
 		"spblocktex": "材质",
 		"spblocktexmaterial": "材质贴图",
 		"spblocktexnormal": "法线贴图",
-		"bodypart": "身体部分",
+		"bodypart": "角色部位",
 		"bodypartskin": "皮肤",
 		"bodypartskinmaterial": "材质贴图",
 		"bodypartskinnormal": "法线贴图",
@@ -1342,11 +1342,11 @@
 				"glow_squid": "发光鱿鱼",
 				"lucy": "粉红色",
 				"wild": "棕色",
-				"temperate": "Temperate",
-				"cold": "Cold",
-				"warm": "Warm",
+				"temperate": "温带",
+				"cold": "极地",
+				"warm": "热带",
 				"charging": "Charging",
-				"invulnerable": "Invulnerable",
+				"invulnerable": "不受伤害",
 				"mangrove": "Mangrove"
 			}
 		}
@@ -2170,7 +2170,7 @@
 		"spblocktex": "贴图",
 		"spblocktexmaterial": "材质贴图",
 		"spblocktexnormal": "法线贴图",
-		"bodypartof": "%1 of %2",
+		"bodypartof": "%2 的 %1",
 		"bodypartchange": "更改",
 		"bodypartskin": "贴图",
 		"bodypartskinmaterial": "材质贴图",
@@ -2269,7 +2269,7 @@
 			"time": "经过一段时间后",
 			"timeisrandom": "随机"
 		},
-		"emitters": "粒子发射器",
+		"emitters": "粒子生成器",
 		"type/": {
 			"default": "粒子 %1",
 			"name": "名称",
