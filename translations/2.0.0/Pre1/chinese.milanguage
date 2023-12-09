@@ -1,19 +1,19 @@
 {
-    "description": "Mine-imator 语言文件。 复制并重命名它以开始创建您自己的翻译。",
-    "file/": {
-        "language": "Chinese",
-        "translator": "飒爽师叔",
-        "forversion": "2.0.0",
-        "lastchange": "2022.06.01"
-    },
-    "startup/": {
-        "caption": "打开中",
-        "trial": "试用版",
-        "full": "完整版",
-        "version": "%1 版本说明 %2, 发布的信息 %3",
-        "credits1": "制作 ",
-        "credits1tip": "点我看David网页.",
-        "credits2": ", 以Minecraft为基础的 ",
+	"description": "Mine-imator 语言文件。 复制并重命名它以开始创建您自己的翻译。",
+	"file/": {
+		"language": "Chinese",
+		"translator": "飒爽师叔",
+		"forversion": "2.0.0",
+		"lastchange": "2022.06.01"
+	},
+	"startup/": {
+		"caption": "打开中",
+		"trial": "试用版",
+		"full": "完整版",
+		"version": "%1 版本说明 %2, 发布的信息 %3",
+		"credits1": "制作 ",
+		"credits1tip": "点我看David网页.",
+		"credits2": ", 以Minecraft为基础的 ",
         "credits2tip": "点我看minecraft网页.",
         "credits3": "程序设计: %1 和 %2   设计: %3 \n汉化:飒爽师叔",
         "newproject": "新工程",
