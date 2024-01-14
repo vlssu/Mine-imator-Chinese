@@ -1306,7 +1306,7 @@
         "shroomlight": "菌光体",
         "basalt": "玄武岩",
         "ancient_debris": "远古残骸",
-        "netherite_block": "下界合金锭",
+        "netherite_block": "下界合金块",
         "soul_soil": "灵魂土",
         "soul_fire": "灵魂火",
         "nether_gold_ore": "下界金矿石",
@@ -1372,7 +1372,7 @@
             "hanging": "悬挂",
             "wood": "木",
             "honey_level": "蜜蜂等级",
-            "charges": "重生锚",
+            "charges": "充能等级",
             "orientation": "方向",
             "value/": {
                 "true": "是",
