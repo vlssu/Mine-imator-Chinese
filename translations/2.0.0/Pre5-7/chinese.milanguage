@@ -2138,8 +2138,8 @@
 			"default": "默认"
 		},
 		"gammacorrect": "伽马校正",
-		"materialmaps": "Object 材质贴图",
-		"materialmapstip": "为对象启用材质和法线贴图纹理设置。"
+		"materialmaps": "物体材质贴图",
+		"materialmapstip": "启用物体的材质和法线贴图纹理设置。"
 	},
 	"library": "素材",
 	"library/": {
