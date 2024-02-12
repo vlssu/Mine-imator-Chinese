@@ -2669,7 +2669,7 @@
 			"tox": "X",
 			"toy": "Y",
 			"toz": "Z",
-			"relative": "与创作者一起移动"
+			"relative": "跟随粒子对象一起移动"
 		},
 		"destruction": "破坏",
 		"destroy": "破坏粒子...",
