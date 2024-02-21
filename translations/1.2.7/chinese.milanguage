@@ -2,7 +2,7 @@
     "description": "Mine-imator language file. Copy and rename this to begin creating your own translation.",
     "file/": {
         "language": "Chinese",
-        "translator": "飒爽师叔整理完整",
+        "translator": "飒爽师叔",
         "forversion": "1.2.7",
         "lastchange": "2020.07.8"
     },
