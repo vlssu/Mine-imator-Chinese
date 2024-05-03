@@ -2699,7 +2699,7 @@
 		"instanceof": "%1 的实例",
 		"partof": "%2 的 %1",
 		"unusedbodypart": "未使用的部件",
-		"frame": "帧 %1",
+		"frame": "%1 帧",
 		"intervals/":
 		{
 			"show": "显示间隔",
@@ -2780,8 +2780,8 @@
 		"windterrain": "地形风",
 		"depth": "渲染深度",
 		"backfaces": "显示背面",
-		"hqhiding": "HQ hiding",
-		"lqhiding": "LQ hiding",
+		"hqhiding": "高质量渲染时隐藏",
+		"lqhiding": "低质量渲染时隐藏",
 		"foliagetint": "树叶色调",
 		"blendmode": "混合模式",
 		"blendmode/": {
@@ -2833,7 +2833,7 @@
 		},
 		"scale": "大小",
 		"scale/": {
-			"xyz": "组合 XYZ",
+			"xyz": "XYZ 等比",
 			"x": "X",
 			"y": "Y",
 			"z": "Z"
@@ -2875,7 +2875,7 @@
 		"glowcolor": "发光色",
 		"mixpercent": "混合百分比",
 		"emissive": "自发光",
-		"metallic": "金属色",
+		"metallic": "金属度",
 		"roughness": "粗糙度",
 		"color": "颜色属性",
 		"surface": "表面特性",
@@ -2908,7 +2908,7 @@
 		"modeltex": "纹理",
 		"modeltexmaterial": "材质贴图",
 		"modeltexnormal": "法线贴图",
-		"itemtex": "图像",
+		"itemtex": "物品贴图",
 		"itemtexmaterial": "材质贴图",
 		"itemtexnormal": "法线贴图",
 		"particles": "粒子",
@@ -2958,7 +2958,7 @@
 			"camerashake": "相机抖动",
 			"camerashake/": {
 				"mode": "模式",
-				"positional": "定位",
+				"positional": "平移",
 				"rotational": "旋转",
 				"strength": "强度",
 				"strength/": {
@@ -3066,10 +3066,10 @@
 			"aa": "字体抗锯齿",
 			"aatip": "启用AA(抗锯齿)以去除字体上的锯齿.(不建议用于3d文本.)"
 		},
-		"item": "贴图",
+		"item": "物品",
 		"item/": {
-			"customitemslot": "切换正在使用贴图",
-			"itemslot": "贴图表"
+			"customitemslot": "切换使用的物品表",
+			"itemslot": "物品表"
 		},
 		"keyframe": "关键帧设置",
 		"transition": "过渡",

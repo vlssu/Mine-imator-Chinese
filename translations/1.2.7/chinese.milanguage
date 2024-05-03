@@ -2547,9 +2547,9 @@
         "depthtip": "此设置决定渲染时的顺序。\n按照数值从小到大的顺序，数值较低的对象先完成渲染。\n此选项可以用于修复Alpha透明的显示错误。\n先完成渲染意味着此物品的透明色所透过的内容越早确定。\n因此需要将具有半透明内容的对象放在最后渲染。\n建议为物品提升渲染次序数值，为方块和场景降低渲染次序数值。",
         "backfaces": "显示内部",
         "backfacestip": "在模型的内部也显示贴图。\n未勾选时从模型内部向模型外部观察将会是透明的。",
-        "hqhiding": "HQ hiding",
+        "hqhiding": "高质量渲染时隐藏",
         "hqhidingtip": "勾选后当开启高质量渲染模式时，隐藏该对象。",
-        "lqhiding": "LQ hiding",
+        "lqhiding": "低质量渲染时隐藏",
         "lqhidingtip": "勾选后只在高质量渲染模式时显示该对象。",
         "foliagetint": "叶色",
         "foliagetinttip": "勾选后将用当前生物群落的叶子颜色着色该物体。",
@@ -2927,11 +2927,11 @@
             "aa": "AA",
             "aatip": "启用AA（抗锯齿）以去除字体上的锯齿.(不建议用于3d文本.)"
         },
-		"item": "贴图",
+		"item": "物品",
         "item/": {
-            "customitemslot": "切换正在使用贴图",
+            "customitemslot": "切换使用的物品表",
             "customitemslottip": "启用在关键帧内切换贴图.",
-            "itemslot": "贴图表",
+            "itemslot": "物品表",
             "itemslottip": "项目材质表中要使用的贴图位置id。",
             "itemtex": "图片",
             "itemtextip": "选择材质包或者图片决定要使用的新材质表."
