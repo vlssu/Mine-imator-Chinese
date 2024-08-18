@@ -16,12 +16,14 @@
   * [`Pre 5-7`](./translations/2.0.0/Pre5-7/chinese.milanguage)
 * [`2.0.1`](./translations/2.0.1/chinese.milanguage)
 * [`2.0.2`](./translations/2.0.2/chinese.milanguage)
+  * [`Continuation Build 1.0.6`](./translations/2.0.2/CB1.0.6/chinese.milanguage)
 
 ---
 
 > 我会将我翻译的文件上传到这里，也方便我自己进行新旧文本差异，让我更快的定位哪些地方有新增和删减  
 如果翻译有误欢迎告诉我，当然你可以直接修改然后合并到我的仓库~  
 软件作者网站 <http://www.mineimator.com/>  
+社区版：https://github.com/mbandersmc/Mine-imator-2.0.2-Continuation-Build   
 汉化作者(飒爽师叔)的博客 <https://blog.vlssu.com/>
 
 ---
