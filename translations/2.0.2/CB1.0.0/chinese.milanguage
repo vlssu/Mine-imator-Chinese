@@ -3456,7 +3456,7 @@
 		"lookat": "注视",
 		"lookat/": {
 			"target": "目标",
-			"blend": "混合",
+			"blend": "继承度",
 			"axis": "注视轴",
 			"xoffset": "X",
 			"yoffset": "Y",
@@ -3472,7 +3472,7 @@
 			"y": "Y",
 			"z": "Z",
 			"child": "旋转",
-			"bend": "弯曲",
+			"bend": "关节弯曲",
 			"offset": "偏移量",
 			"xoffset": "X",
 			"yoffset": "Y",
@@ -3490,7 +3490,7 @@
 			"xoffset": "X",
 			"yoffset": "Y",
 			"zoffset": "Z",
-			"bend": "弯曲",
+			"bend": "关节弯曲",
 			"offset": "偏移量",
 			"blend": "继承度"
 		},
