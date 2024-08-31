@@ -16,7 +16,8 @@
   * [`Pre 5-7`](./translations/2.0.0/Pre5-7/chinese.milanguage)
 * [`2.0.1`](./translations/2.0.1/chinese.milanguage)
 * [`2.0.2`](./translations/2.0.2/chinese.milanguage)
-  * [`Continuation Build 1.0.6`](./translations/2.0.2/CB1.0.6/chinese.milanguage)
+  * [`Community Build 1.0.0`](./translations/2.0.2/CB1.0.0/chinese.milanguage)
+  * [`Continuation Build 1.0.6`](./translations/2.0.2/CC1.0.6/chinese.milanguage)
 
 ---
 
