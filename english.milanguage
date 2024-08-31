@@ -3,8 +3,8 @@
 	"file/": {
 		"language": "English",
 		"locale": "en-US",
-		"translator": "David, Nimi, mbanders",
-		"forversion": "2.0.2 Continuation Build 1.0.4",
+		"translator": "David, Nimi, mbanders, Swooplezz",
+		"forversion": "2.0.2 Community Build 1.0.0",
 		"lastchange": "2024.08.01"
 	},
 	"particle/": {
@@ -51,6 +51,10 @@
 		"downloadskin": "Download skin",
 		"pastekey": "Paste key",
 		"filterlist": "Filter list",
+		"lightgroup/": {
+			"new": "New light group",
+			"remove": "Remove light group"
+		},
 		"template/": {
 			"new": "New template",
 			"animate": "Create timeline from template",
@@ -146,7 +150,8 @@
 			"copy": "Copy all values",
 			"paste": "Paste all values",
 			"reset": "Reset all values",
-			"copyglobalposition": "Copy global position"
+			"copyglobalposition": "Copy global position",
+			"inverse": "Set inverse"
 		},
 		"tl/": {
 			"addfolder": "Add folder",
@@ -259,8 +264,8 @@
 		"newproject": "New project",
 		"browse": "Browse...",
 		"recentprojects": "Recent projects",
-		"loadingassets": "Preparing %1 assets... %2%",
-		"splashauthor": "Art by %1",
+		"loadingassets": "Loading assets",
+		"splashauthor": "Art by",
 		"sortby": "Sort by"
 	},
 	"welcome/": {
@@ -274,11 +279,11 @@
 		"releasedate": ", released %1",
 		"minecraftpre": "Based on the game ",
 		"minecraft": "Minecraft",
-		"createdby": "CREATED BY",
-		"development": "DEVELOPMENT",
-		"uibranding": "UI & BRANDING",
 		"moddevelopment": "MOD DEVELOPMENT",
+		"mineimatorcreator": "MINE-IMATOR CREATOR",
+		"uibranding": "UI & BRANDING",
 		"betatesting": "BETA TESTING",
+		"specialthanks": "SPECIAL THANKS",
 		"site": "Visit Mine-imator's website",
 		"forums": "Visit the Mine-imator forums",
 		"twitter": "Visit Mine-imator's X (Twitter)",
@@ -300,6 +305,8 @@
 			"future": "Last opened in the future"
 		},
 		"none": "The projects you've opened recently will appear here!",
+		"searchnone": "No projects were found by that name.",
+		"searchcaption": "Search...",
 		"sortdatenewest": "Date (newest)",
 		"sortdateoldest": "Date (oldest)",
 		"sortnameaz": "Name (A-Z)",
@@ -696,9 +703,9 @@
 		"notnow": "Not now"
 	},
 	"modelbench/": {
-		"caption": "Try out Modelbench!",
-		"info": "Create custom models for your projects with Modelbench, the free and easy to use modeling tool for Mine-imator!",
-		"download": "Get Modelbench",
+		"caption": "Try out Modelbench Community Build!",
+		"info": "Create custom models for your projects with Modelbench CB, the free and easy to use modeling tool for Mine-imator CB!",
+		"download": "Get Modelbench CB",
 		"notnow": "Not now",
 		"dontshow": "Don't show again"
 	},
@@ -851,6 +858,12 @@
 			"rows": "Rows",
 			"columns": "Columns"
 		},
+		"overlay/": {
+			"controls": "View controls",
+			"shapes": "Timeline shapes",
+			"guides": "Timeline guides",
+			"guidestip": "Enable visual representations of camera frustums, spotlight cones, etc. upon selection."
+		},
 		"snap/": {
 			"move": "Move",
 			"rotate": "Rotate",
@@ -924,6 +937,7 @@
 		"printscreen": "Printscreen"
 	},
 	"column/": {
+		"lgname": "Name",
 		"libname": "Name",
 		"libtype": "Type",
 		"libinstances": "Instances",
@@ -2642,6 +2656,11 @@
 		"materialmaps": "Object material maps",
 		"materialmapstip": "Enable material and normal map texture settings for objects."
 	},
+	"lightgroups": "LIGHT GROUPS",
+	"lightgroup/": {
+		"name" : "Name",
+		"new" : "New group"
+	},
 	"library": "LIBRARY",
 	"library/": {
 		"name": "Name",
@@ -3027,14 +3046,18 @@
 		"groundtexnormal": "Normal map",
 		"biome": "Biome",
 		"biomevariant": "Variant",
-		"scenecolors": "Scene colors",
+		"dayscenecolors": "Day scene colors",
+		"nightscenecolors": "Night scene colors",
 		"biomecolors": "Biome colors",
 		"leafcolors": "Leaf colors",
 		"skycolor": "Sky",
 		"skycloudscolor": "Clouds",
 		"sunlightcolor": "Sunlight",
 		"ambientcolor": "Ambient",
-		"nightcolor": "Night",
+		"nightskycolor": "Sky",
+		"nightskycloudscolor": "Clouds",
+		"nightskystarscolor": "Stars",
+		"nightcolor": "Ambient",
 		"grasscolor": "Grass",
 		"foliagecolor": "Foliage",
 		"watercolor": "Water",
@@ -3171,6 +3194,7 @@
 			"moontexture": "Moon texture",
 			"cloudtexture": "Cloud texture"
 		},
+		"itemsheetsizegrid": "Grid",
 		"itemsheetsizerows": "Rows",
 		"itemsheetsizecolumns": "Columns",
 		"sceneryrandomize": "Randomize blocks",
@@ -3212,11 +3236,17 @@
 		"blocksheet": "Block sheet",
 		"particlesheet": "Particle sheet",
 		"texture": "Texture",
-		"ok": "OK"
+		"issheet": "Item sheet",
+		"grid": "Grid",
+		"rows": "Rows",
+		"columns": "Columns",
+		"ok": "OK",
+		"doall": "Do this for all images"
 	},
 	"importitemsheet/": {
 		"caption": "Import item sheet",
 		"issheet": "Item sheet",
+		"grid": "Grid",
 		"rows": "Rows",
 		"columns": "Columns",
 		"ok": "OK"
@@ -3315,6 +3345,7 @@
 		"hqhiding": "HQ hiding",
 		"lqhiding": "LQ hiding",
 		"foliagetint": "Foliage tint",
+		"lightgroup": "Light group",
 		"blendmode": "Blend mode",
 		"blendmode/": {
 			"normal": "Normal",
@@ -3336,6 +3367,12 @@
 			"scale": "Scale",
 			"speed": "Speed",
 			"strength": "Strength"
+		},
+		"light": "LIGHT",
+		"light/": {
+			"lighttype": "Light type",
+			"point": "Point light",
+			"spot": "Spot light"
 		},
 		"audio": "AUDIO",
 		"audioadd": "Add sound",
@@ -3410,6 +3447,63 @@
 			"angletarget": "Angle target",
 			"angleoffset": "Angle offset"
 		},
+		"bendik": "Bend inverse kinematics",
+		"bendik/": {
+			"tip": "Allows the part to bend parallel to the rotation of another timeline.",
+			"target": "Target",
+			"influence": "Influence"
+		},
+		"lookat": "Look at",
+		"lookat/": {
+			"target": "Target",
+			"blend": "Blend",
+			"axis": "Look at axis",
+			"xoffset": "X",
+			"yoffset": "Y",
+			"zoffset": "Z",
+			"offset": "Offset"
+		},
+        "copypos": "Copy position",
+		"copypos/": {
+			"tip": "Allows the object to inherit position from a separate object.",
+			"target": "Target",
+			"copyaxis": "Axis",
+			"x": "X",
+			"y": "Y",
+			"z": "Z",
+			"child": "Rotate",
+			"bend": "Bent half",
+			"offset": "Offset",
+			"xoffset": "X",
+			"yoffset": "Y",
+			"zoffset": "Z",
+			"blend": "Blend"
+		},
+        "copyrot": "Copy rotation",
+		"copyrot/": {
+			"tip": "Allows the object to inherit rotation from a separate object.",
+			"target": "Target",
+			"copyaxis": "Axis",
+			"x": "X",
+			"y": "Y",
+			"z": "Z",
+			"xoffset": "X",
+			"yoffset": "Y",
+			"zoffset": "Z",
+			"bend": "Bent half",
+			"offset": "Offset",
+			"blend": "Blend"
+		},
+        "copyscale": "Copy scale",
+		"copyscale/": {
+			"tip": "Allows the object to inherit scale from a separate object.",
+			"target": "Target",
+			"copyaxis": "Axis",
+			"x": "X",
+			"y": "Y",
+			"z": "Z",
+			"blend": "Blend"
+		},
 		"material": "MATERIAL",
 		"opacity": "Opacity",
 		"blendcolor": "Blend color",
@@ -3480,11 +3574,19 @@
 			"range": "Range",
 			"fadesize": "Fade size",
 			"spotsharpness": "Spot sharpness",
-			"spotradius": "Spot radius"
+			"spotradius": "Spot radius",
+			"gobotexture": "Gobo",
+			"gobooffset": "Offset",
+			"gobohoffset": "H",
+			"gobovoffset": "V",
+			"goborepeat": "Repeat",
+			"gobohrepeat": "H",
+			"gobovrepeat": "V"
 		},
 		"camera": "CAMERA",
 		"camera/": {
 			"fov": "Field of view",
+			"aspect": "Aspect ratio",
 			"lightmanagement": "Light management",
 			"tonemapper": "Tonemapper",
 			"tonemapper/": {
@@ -3708,6 +3810,7 @@
 		"compact": "Compact panels",
 		"compacttimeline": "Compact timeline list",
 		"reducedmotion": "Reduced motion",
+		"selectlockedparent": "Select locked timeline parent",
 		"timeline": "Timeline",
 		"timeline/": {
 			"autoscroll": "Auto-scroll when playing animation",
@@ -3720,6 +3823,7 @@
 		"zisup": "Z is up",
 		"separatetoolmodes": "Separate tool modes",
 		"separatetoolmodestip": "Switch between separate viewport tools, instead of toggling tools together.",
+		"workcamerafov": "Work camera FOV",
 		"gizmosfacecamera": "View controls always face camera",
 		"fadegizmos": "Fade view controls",
 		"cameralockmouse": "Camera locks mouse",
