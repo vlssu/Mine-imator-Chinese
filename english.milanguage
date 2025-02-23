@@ -3,9 +3,9 @@
 	"file/": {
 		"language": "English",
 		"locale": "en-US",
-		"translator": "David, Nimi, mbanders, Swooplezz",
-		"forversion": "2.0.2 Community Build 1.0.0",
-		"lastchange": "2024.08.01"
+		"translator": "David, Nimi, mbanders",
+		"forversion": "2.0.2 Continuation Build 1.0.7",
+		"lastchange": "2024.10.23"
 	},
 	"particle/": {
 		"default": "Default spawner",
@@ -51,10 +51,6 @@
 		"downloadskin": "Download skin",
 		"pastekey": "Paste key",
 		"filterlist": "Filter list",
-		"lightgroup/": {
-			"new": "New light group",
-			"remove": "Remove light group"
-		},
 		"template/": {
 			"new": "New template",
 			"animate": "Create timeline from template",
@@ -131,7 +127,9 @@
 		},
 		"linkeaseinout": "Link ease in/out",
 		"importwatermarkimage": "Import watermark image",
-		"resetwatermarkimage": "Reset watermark image"
+		"resetwatermarkimage": "Reset watermark image",
+		"importthumbnailimage": "Import custom thumbnail",
+		"resetthumbnailimage": "Remove custom thumbnail"
 	},
 	"contextmenu/": {
 		"textbox/": {
@@ -150,8 +148,7 @@
 			"copy": "Copy all values",
 			"paste": "Paste all values",
 			"reset": "Reset all values",
-			"copyglobalposition": "Copy global position",
-			"inverse": "Set inverse"
+			"copyglobalposition": "Copy global position"
 		},
 		"tl/": {
 			"addfolder": "Add folder",
@@ -264,8 +261,8 @@
 		"newproject": "New project",
 		"browse": "Browse...",
 		"recentprojects": "Recent projects",
-		"loadingassets": "Loading assets",
-		"splashauthor": "Art by",
+		"loadingassets": "Preparing %1 assets... %2%",
+		"splashauthor": "Art by %1",
 		"sortby": "Sort by"
 	},
 	"welcome/": {
@@ -279,11 +276,11 @@
 		"releasedate": ", released %1",
 		"minecraftpre": "Based on the game ",
 		"minecraft": "Minecraft",
-		"moddevelopment": "MOD DEVELOPMENT",
-		"mineimatorcreator": "MINE-IMATOR CREATOR",
+		"createdby": "CREATED BY",
+		"development": "DEVELOPMENT",
 		"uibranding": "UI & BRANDING",
+		"moddevelopment": "MOD DEVELOPMENT",
 		"betatesting": "BETA TESTING",
-		"specialthanks": "SPECIAL THANKS",
 		"site": "Visit Mine-imator's website",
 		"forums": "Visit the Mine-imator forums",
 		"twitter": "Visit Mine-imator's X (Twitter)",
@@ -305,8 +302,6 @@
 			"future": "Last opened in the future"
 		},
 		"none": "The projects you've opened recently will appear here!",
-		"searchnone": "No projects were found by that name.",
-		"searchcaption": "Search...",
 		"sortdatenewest": "Date (newest)",
 		"sortdateoldest": "Date (oldest)",
 		"sortnameaz": "Name (A-Z)",
@@ -703,9 +698,9 @@
 		"notnow": "Not now"
 	},
 	"modelbench/": {
-		"caption": "Try out Modelbench Community Build!",
-		"info": "Create custom models for your projects with Modelbench CB, the free and easy to use modeling tool for Mine-imator CB!",
-		"download": "Get Modelbench CB",
+		"caption": "Try out Modelbench!",
+		"info": "Create custom models for your projects with Modelbench, the free and easy to use modeling tool for Mine-imator!",
+		"download": "Get Modelbench",
 		"notnow": "Not now",
 		"dontshow": "Don't show again"
 	},
@@ -858,12 +853,6 @@
 			"rows": "Rows",
 			"columns": "Columns"
 		},
-		"overlay/": {
-			"controls": "View controls",
-			"shapes": "Timeline shapes",
-			"guides": "Timeline guides",
-			"guidestip": "Enable visual representations of camera frustums, spotlight cones, etc. upon selection."
-		},
 		"snap/": {
 			"move": "Move",
 			"rotate": "Rotate",
@@ -905,7 +894,9 @@
 		"particles": "Particle editor for %1",
 		"ground": "Ground",
 		"timelineeditor": "%1 properties",
-		"frameeditor": "%1 (Frame %2)",
+		"frameeditor": "%1 (%2)",
+		"frameeditorsingle": "Frame %1",
+		"frameeditormulti": "%1 Frames",
 		"settings": "Preferences"
 	},
 	"key/": {
@@ -937,7 +928,6 @@
 		"printscreen": "Printscreen"
 	},
 	"column/": {
-		"lgname": "Name",
 		"libname": "Name",
 		"libtype": "Type",
 		"libinstances": "Instances",
@@ -1213,6 +1203,7 @@
 		"llama_spit": "Llama Spit",
 		"wither_skull": "Wither Skull",
 		"wind_charge": "Wind Charge",
+		"creaking": "Creaking",
 		"part/": {
 			"body": "Body",
 			"right_arm": "Right arm",
@@ -1659,6 +1650,7 @@
 				"mangrove": "Mangrove",
 				"cherry": "Cherry",
 				"bamboo": "Bamboo",
+				"pale_oak": "Pale Oak",
 				"crimson": "Crimson",
 				"warped": "Warped",
 				"hanging": "Hanging",
@@ -1672,6 +1664,9 @@
 				"vanilla": "Vanilla",
 				"cherryblossom": "Cherry Blossom",
 				"15thanniversary": "15th Anniversary",
+				"purpleheart": "Purple Heart",
+				"followers": "Follower's",
+				"mcc15thyear": "MCC 15th Year",
 				"minecon_2011": "MineCon 2011",
 				"minecon_2012": "MineCon 2012",
 				"minecon_2013": "MineCon 2013",
@@ -1723,6 +1718,7 @@
 				"iron": "Iron",
 				"diamond": "Diamond",
 				"netherite": "Netherite",
+				"turtle_scute": "Turtle",
 				"painting_kebab": "Kebab med tre pepperoni",
 				"painting_aztec": "de_aztec",
 				"painting_alban": "Albanian",
@@ -2108,6 +2104,10 @@
 		"trial_spawner": "Trial Spawner",
 		"vault": "Vault",
 		"heavy_core": "Heavy Core",
+		"pale_moss_carpet": "Pale Moss Carpet",
+		"pale_moss_block": "Pale Moss Block",
+		"pale_hanging_moss": "Pale Hanging Moss",
+		"creaking_heart": "Creaking Heart",
 		"state/": {
 			"variant": "Variant",
 			"snowy": "Snowy",
@@ -2190,6 +2190,8 @@
 			"trial_spawner_state": "State",
 			"vault_state": "State",
 			"ominous": "Ominous",
+			"tip": "Tip",
+			"creaking": "Creaking",
 			"value/": {
 				"stone": "Stone",
 				"smooth_stone": "Smooth Stone",
@@ -2387,6 +2389,7 @@
 				"dark_oak_sapling": "Dark Oak Sapling",
 				"cherry_sapling": "Cherry Sapling",
 				"mangrove_propagule": "Mangrove Propagule",
+				"pale_oak_sapling": "Pale Oak Sapling",
 				"red_mushroom": "Red Mushroom",
 				"brown_mushroom": "Brown Mushroom",
 				"cactus": "Cactus",
@@ -2529,6 +2532,7 @@
 		"name": "Name",
 		"author": "Author",
 		"description": "Description",
+		"thumbnail": "Thumbnail",
 		"videosize": "Render size",
 		"videosizetemplate/": {
 			"avatar": "Avatar",
@@ -2655,11 +2659,6 @@
 		"gamma": "Gamma",
 		"materialmaps": "Object material maps",
 		"materialmapstip": "Enable material and normal map texture settings for objects."
-	},
-	"lightgroups": "LIGHT GROUPS",
-	"lightgroup/": {
-		"name" : "Name",
-		"new" : "New group"
 	},
 	"library": "LIBRARY",
 	"library/": {
@@ -3046,18 +3045,14 @@
 		"groundtexnormal": "Normal map",
 		"biome": "Biome",
 		"biomevariant": "Variant",
-		"dayscenecolors": "Day scene colors",
-		"nightscenecolors": "Night scene colors",
+		"scenecolors": "Scene colors",
 		"biomecolors": "Biome colors",
 		"leafcolors": "Leaf colors",
 		"skycolor": "Sky",
 		"skycloudscolor": "Clouds",
 		"sunlightcolor": "Sunlight",
 		"ambientcolor": "Ambient",
-		"nightskycolor": "Sky",
-		"nightskycloudscolor": "Clouds",
-		"nightskystarscolor": "Stars",
-		"nightcolor": "Ambient",
+		"nightcolor": "Night",
 		"grasscolor": "Grass",
 		"foliagecolor": "Foliage",
 		"watercolor": "Water",
@@ -3142,6 +3137,7 @@
 		"birch_forest": "Birch Forest",
 		"old_growth_birch_forest": "Old Growth Birch Forest",
 		"dark_forest": "Dark Forest",
+		"pale_garden": "Pale Garden",
 		"savanna": "Savanna",
 		"savanna_plateau": "Savanna Plateau",
 		"windswept_savanna": "Windswept Savanna",
@@ -3194,7 +3190,6 @@
 			"moontexture": "Moon texture",
 			"cloudtexture": "Cloud texture"
 		},
-		"itemsheetsizegrid": "Grid",
 		"itemsheetsizerows": "Rows",
 		"itemsheetsizecolumns": "Columns",
 		"sceneryrandomize": "Randomize blocks",
@@ -3236,17 +3231,11 @@
 		"blocksheet": "Block sheet",
 		"particlesheet": "Particle sheet",
 		"texture": "Texture",
-		"issheet": "Item sheet",
-		"grid": "Grid",
-		"rows": "Rows",
-		"columns": "Columns",
-		"ok": "OK",
-		"doall": "Do this for all images"
+		"ok": "OK"
 	},
 	"importitemsheet/": {
 		"caption": "Import item sheet",
 		"issheet": "Item sheet",
-		"grid": "Grid",
 		"rows": "Rows",
 		"columns": "Columns",
 		"ok": "OK"
@@ -3345,7 +3334,6 @@
 		"hqhiding": "HQ hiding",
 		"lqhiding": "LQ hiding",
 		"foliagetint": "Foliage tint",
-		"lightgroup": "Light group",
 		"blendmode": "Blend mode",
 		"blendmode/": {
 			"normal": "Normal",
@@ -3367,12 +3355,6 @@
 			"scale": "Scale",
 			"speed": "Speed",
 			"strength": "Strength"
-		},
-		"light": "LIGHT",
-		"light/": {
-			"lighttype": "Light type",
-			"point": "Point light",
-			"spot": "Spot light"
 		},
 		"audio": "AUDIO",
 		"audioadd": "Add sound",
@@ -3447,63 +3429,6 @@
 			"angletarget": "Angle target",
 			"angleoffset": "Angle offset"
 		},
-		"bendik": "Bend inverse kinematics",
-		"bendik/": {
-			"tip": "Allows the part to bend parallel to the rotation of another timeline.",
-			"target": "Target",
-			"influence": "Influence"
-		},
-		"lookat": "Look at",
-		"lookat/": {
-			"target": "Target",
-			"blend": "Blend",
-			"axis": "Look at axis",
-			"xoffset": "X",
-			"yoffset": "Y",
-			"zoffset": "Z",
-			"offset": "Offset"
-		},
-        "copypos": "Copy position",
-		"copypos/": {
-			"tip": "Allows the object to inherit position from a separate object.",
-			"target": "Target",
-			"copyaxis": "Axis",
-			"x": "X",
-			"y": "Y",
-			"z": "Z",
-			"child": "Rotate",
-			"bend": "Bent half",
-			"offset": "Offset",
-			"xoffset": "X",
-			"yoffset": "Y",
-			"zoffset": "Z",
-			"blend": "Blend"
-		},
-        "copyrot": "Copy rotation",
-		"copyrot/": {
-			"tip": "Allows the object to inherit rotation from a separate object.",
-			"target": "Target",
-			"copyaxis": "Axis",
-			"x": "X",
-			"y": "Y",
-			"z": "Z",
-			"xoffset": "X",
-			"yoffset": "Y",
-			"zoffset": "Z",
-			"bend": "Bent half",
-			"offset": "Offset",
-			"blend": "Blend"
-		},
-        "copyscale": "Copy scale",
-		"copyscale/": {
-			"tip": "Allows the object to inherit scale from a separate object.",
-			"target": "Target",
-			"copyaxis": "Axis",
-			"x": "X",
-			"y": "Y",
-			"z": "Z",
-			"blend": "Blend"
-		},
 		"material": "MATERIAL",
 		"opacity": "Opacity",
 		"blendcolor": "Blend color",
@@ -3574,19 +3499,11 @@
 			"range": "Range",
 			"fadesize": "Fade size",
 			"spotsharpness": "Spot sharpness",
-			"spotradius": "Spot radius",
-			"gobotexture": "Gobo",
-			"gobooffset": "Offset",
-			"gobohoffset": "H",
-			"gobovoffset": "V",
-			"goborepeat": "Repeat",
-			"gobohrepeat": "H",
-			"gobovrepeat": "V"
+			"spotradius": "Spot radius"
 		},
 		"camera": "CAMERA",
 		"camera/": {
 			"fov": "Field of view",
-			"aspect": "Aspect ratio",
 			"lightmanagement": "Light management",
 			"tonemapper": "Tonemapper",
 			"tonemapper/": {
@@ -3810,7 +3727,6 @@
 		"compact": "Compact panels",
 		"compacttimeline": "Compact timeline list",
 		"reducedmotion": "Reduced motion",
-		"selectlockedparent": "Select locked timeline parent",
 		"timeline": "Timeline",
 		"timeline/": {
 			"autoscroll": "Auto-scroll when playing animation",
@@ -3823,7 +3739,6 @@
 		"zisup": "Z is up",
 		"separatetoolmodes": "Separate tool modes",
 		"separatetoolmodestip": "Switch between separate viewport tools, instead of toggling tools together.",
-		"workcamerafov": "Work camera FOV",
 		"gizmosfacecamera": "View controls always face camera",
 		"fadegizmos": "Fade view controls",
 		"cameralockmouse": "Camera locks mouse",
@@ -3882,7 +3797,8 @@
 			"secondaryview": "Secondary view",
 			"particlesspawn": "Spawn particles",
 			"particlesclear": "Clear particles",
-			"play": "Play animation",
+			"play": "Play / Pause animation",
+			"playstop": "Play / Stop animation",
 			"playbeginning": "Restart animation",
 			"markerleft": "Left",
 			"markerright": "Right",
