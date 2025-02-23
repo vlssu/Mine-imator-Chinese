@@ -4,8 +4,8 @@
 		"language": "Chinese",
 		"locale": "zh-CN",
 		"translator": "飒爽师叔",
-		"forversion": "2.0.2 Continuation Build 1.0.7",
-		"lastchange": "2024.10.23"
+		"forversion": "2.0.2 Continuation Build 1.0.8",
+		"lastchange": "2024.11.25"
 	},
 	"particle/": {
 		"default": "默认粒子",
@@ -806,7 +806,8 @@
 			"lapis": "青金石",
 			"netherite": "下界合金",
 			"quartz": "石英",
-			"redstone": "红石"
+			"redstone": "红石",
+			"resin": "树脂"
 		}
 	},
 	"loading/": {
@@ -1667,6 +1668,7 @@
 				"purpleheart": "紫色心形披风",
 				"followers": "追随者披风",
 				"mcc15thyear": "MCC 15周年披风",
+				"minecraftexperience": "Minecraft Experience披风",
 				"minecon_2011": "MineCon 2011参与者披风",
 				"minecon_2012": "MineCon 2012参与者披风",
 				"minecon_2013": "MineCon 2013参与者披风",
@@ -2108,6 +2110,8 @@
 		"trial_spawner": "试炼刷怪笼",
 		"vault": "宝库",
 		"heavy_core": "沉重核心",
+		"resin_clump": "树脂团",
+		"resin_block": "树脂块",
 		"state/": {
 			"variant": "类型",
 			"snowy": "积雪",
@@ -2191,7 +2195,7 @@
 			"vault_state": "状态",
 			"ominous": "不祥",
 			"tip": "提示",
-			"creaking": "咯吱声",
+			"active": "激活",
 			"value/": {
 				"stone": "石头",
 				"smooth_stone": "平滑石头",
@@ -2215,6 +2219,7 @@
 				"dark_oak": "深色橡木",
 				"mangrove": "红树木",
 				"cherry": "樱花木",
+				"pale_oak": "苍白橡木",
 				"bamboo": "竹子",
 				"bamboo_mosaic": "竹马赛克",
 				"crimson": "绯红",
@@ -2295,6 +2300,8 @@
 				"lily_of_the_valley": "铃兰",
 				"torchflower": "火把花",
 				"wither_rose": "凋灵玫瑰",
+				"closed_eyeblossom": "闭合的眼眸花",
+				"open_eyeblossom": " 张开的眼眸花",
 				"normal": "默认",
 				"soul_torch": "灵魂火把",
 				"soul_fire": "灵魂火",
@@ -2523,7 +2530,10 @@
 				"waiting_for_reward_ejection": "等待喷出奖励",
 				"ejecting_reward": "喷出奖励",
 				"unlocking": "激活中",
-				"ejecting": "喷出"
+				"ejecting": "喷出",
+				"resin_block": "树脂块",
+				"resin_bricks": "树脂砖块",
+				"chiseled_resin_bricks": "雕纹树脂砖块"
 			}
 		}
 	},
@@ -2817,7 +2827,7 @@
 					"big_smoke": "大型烟雾",
 					"bubble": "气泡",
 					"bubble_pop": "泡沫破灭",
-					"cherry_leaves": "樱花叶子",
+					"cherry": "樱花叶子",
 					"critical_hit": "会心一击",
 					"damage": "损血",
 					"drip_fall": "水滴(落)",
@@ -2839,6 +2849,7 @@
 					"nautilus": "鹦鹉螺",
 					"note": "音符",
 					"ominous_spawning": "不祥之物",
+					"pale_oak": "苍白橡树树叶",
 					"raid_omen": "袭击之兆",
 					"sculk_charge": "幽匿块(冒泡)",
 					"sculk_charge_pop": "幽匿块(青色圆圈粒子)",

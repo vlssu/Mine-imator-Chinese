@@ -19,6 +19,7 @@
   * [`Community Build 1.0.0`](./translations/2.0.2/CB1.0.0/chinese.milanguage)
   * [`Continuation Build 1.0.4 - 1.0.6`](./translations/2.0.2/CC1.0.6/chinese.milanguage)
   * [`Continuation Build 1.0.7`](./translations/2.0.2/CC1.0.7/chinese.milanguage)
+  * [`Continuation Build 1.0.8`](./translations/2.0.2/CC1.0.8/chinese.milanguage)
 
 ---
 
