@@ -248,7 +248,7 @@
         "pointlight": "光源",
         "spotlight": "聚光灯",
         "camera": "摄像机",
-        "background": "背景介绍",
+        "background": "环境",
         "audio": "音轨",
         "model": "模型",
         "folder": "文件夹",
