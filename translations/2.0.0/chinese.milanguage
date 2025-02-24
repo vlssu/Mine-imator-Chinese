@@ -2322,8 +2322,8 @@
 			"temp": "类型",
 			"text": "文本",
 			"textsample": "示例文本",
-			"template": "Sprite (模板)",
-			"spritesheet": "Sprite (整体)",
+			"template": "粒子 (模板)",
+			"spritesheet": "粒子 (贴图)",
 			"sprite/": {
 				"tex": "贴图",
 				"templatepack": "材质",
