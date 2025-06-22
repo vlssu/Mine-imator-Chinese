@@ -22,13 +22,14 @@
   * [`Continuation Build 1.0.8`](./translations/2.0.2/CC1.0.8/chinese.milanguage)
   * [`Continuation Build 1.0.9`](./translations/2.0.2/CC1.0.9/chinese.milanguage)
   * [`Continuation Build 1.0.10`](./translations/2.0.2/CC1.0.10/chinese.milanguage)
+  * [`Simply Upscaled Build 1.0.10.0`](./translations/2.0.2/SU1.0.10.0/chinese.milanguage)
 
 ---
 
 > 我会将我翻译的文件上传到这里，也方便我自己进行新旧文本差异，让我更快的定位哪些地方有新增和删减  
 如果翻译有误欢迎告诉我，当然你可以直接修改然后合并到我的仓库~  
 软件作者网站 <http://www.mineimator.com/>  
-社区有两个版本：[CC（延续版）](https://github.com/mbandersmc/Mine-imator-2.0.2-Continuation-Build)、[CB（社区版）](https://communitybuild.netlify.app/mineimator)  
+社区有两个版本：[CC（延续版）](https://github.com/mbandersmc/Mine-imator-2.0.2-Continuation-Build)、[SU（简单升级版）](https://github.com/YogaindoCR/Mine-imator-2.0.2-Simply-Upscaled-Build)、[CB（社区版）](https://communitybuild.netlify.app/mineimator)  
 汉化作者(飒爽师叔)的博客 <https://blog.vlssu.com/>
 
 ---

@@ -479,7 +479,7 @@
 	"view/": {
 		"rendertip": "在此窗口中启用高品质渲染。\n这将会启用完整的阴影、景深、抗锯齿和其他的各种效果.",
 		"renderfps": "渲染 FPS: %1",
-		"rendertime": "在 %1 秒内渲染",
+		"rendertime": "渲染耗时 %1 秒",
 		"workcamera": "工作摄像机",
 		"activecamera": "活动摄像机 (%1)",
 		"selectedcamera": "选中的摄像机 (%1)",
