@@ -25,6 +25,7 @@
   * [`Simply Upscaled Build 1.0.10.0`](./translations/2.0.2/SU1.0.10.0/chinese.milanguage)
   * [`Continuation Build 1.0.11`](./translations/2.0.2/CC1.0.11/chinese.milanguage)
   * [`Continuation Build 1.0.12`](./translations/2.0.2/CC1.0.12/chinese.milanguage)
+  * [`Simply Upscaled Build 1.0.12.0`](./translations/2.0.2/SU1.0.12.0/chinese.milanguage)
 
 ---
 
