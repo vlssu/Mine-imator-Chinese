@@ -1,0 +1,8 @@
+# 打包产物与临时目录
+dist/
+.pack-work/
+upstream/
+
+# Python
+__pycache__/
+*.pyc

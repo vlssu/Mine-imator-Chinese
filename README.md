@@ -34,6 +34,12 @@
   * [`Simply Upscaled Build 1.0.13.1`](./translations/2.0.2/SU1.0.13.1/chinese.milanguage)
   * [`Simply Upscaled Build 1.0.14.0`](./translations/2.0.2/SU1.0.14.0/chinese.milanguage)
 
+### 中文整合包（下载即用）
+
+不想手动替换语言文件的话，可以直接到 [Releases](../../releases) 下载对应版本的整合包：解压后双击 `Mine-imator.exe` 即为简体中文界面（已内置中文字体和中文命名的粒子预设）。
+
+维护流程：更新某个版本的汉化文件并打上形如 `2.0.2-CC1.0.14` / `2.0.2-SU1.0.14.0` 的标签后，GitHub Actions 会自动从上游拉取该版本的发行包、注入汉化文件与字体/粒子，并用同一标签发布整合包。
+
 ---
 
 > 我会将我翻译的文件上传到这里，也方便我自己进行新旧文本差异，让我更快的定位哪些地方有新增和删减  

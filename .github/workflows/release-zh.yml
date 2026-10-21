@@ -1,0 +1,127 @@
+name: 发布中文版
+
+# 推送形如 2.0.2-CC1.0.14 / 2.0.2-SU1.0.14.0 的标签时自动：
+#   1. 从上游仓库拉取对应版本的发行包
+#   2. 替换语言文件、CJK 字体、中文粒子预设
+#   3. 以同一标签发布「下载即中文」的整合包
+
+on:
+  push:
+    tags:
+      - "2.0.2-*"
+  workflow_dispatch:
+    inputs:
+      build:
+        description: "构建类型（CC=延续版，SU=简单升级版）"
+        required: true
+        type: choice
+        options: ["CC", "SU"]
+        default: "CC"
+      version:
+        description: "上游版本号，例如 1.0.14 或 1.0.14.0"
+        required: true
+      tag:
+        description: "发布用标签（留空自动生成 2.0.2-<类型><版本>）"
+        required: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: zh-release-${{ github.ref_name }}-${{ inputs.version || '' }}
+  cancel-in-progress: false
+
+env:
+  GH_TOKEN: ${{ github.token }}
+
+jobs:
+  package:
+    name: 打包并发布
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - name: 检出仓库
+        uses: actions/checkout@v4
+
+      - name: 确定发布标签
+        id: tag
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          REF_NAME: ${{ github.ref_name }}
+          INPUT_TAG: ${{ inputs.tag }}
+          INPUT_BUILD: ${{ inputs.build }}
+          INPUT_VERSION: ${{ inputs.version }}
+        run: |
+          set -euo pipefail
+          if [ "$EVENT_NAME" = "push" ]; then
+            TAG="$REF_NAME"
+          elif [ -n "${INPUT_TAG:-}" ]; then
+            TAG="$INPUT_TAG"
+          else
+            TAG="2.0.2-${INPUT_BUILD}${INPUT_VERSION}"
+          fi
+          echo "tag=$TAG" >> "$GITHUB_OUTPUT"
+          echo "发布标签：$TAG"
+
+      - name: 解析版本与汉化文件
+        id: info
+        run: |
+          set -euo pipefail
+          python3 tools/pack_zh.py resolve --tag "${{ steps.tag.outputs.tag }}" --out "$GITHUB_OUTPUT"
+
+      - name: 拉取上游发行包
+        run: |
+          set -euo pipefail
+          mkdir -p upstream
+          gh release download "${{ steps.info.outputs.upstream_tag }}" \
+            --repo "${{ steps.info.outputs.upstream_repo }}" \
+            --pattern "*.zip" --dir upstream
+          ls -lh upstream
+
+      - name: 注入汉化、字体与粒子
+        id: pack
+        run: |
+          set -euo pipefail
+          ZIP="$(ls upstream/*.zip | head -n 1)"
+          python3 tools/pack_zh.py build \
+            --tag "${{ steps.tag.outputs.tag }}" \
+            --zip "$ZIP" \
+            --out-dir dist \
+            --notes dist/notes.md \
+            --work "$RUNNER_TEMP/pack-work" \
+            --gh-output "$GITHUB_OUTPUT"
+          ls -lh dist
+
+      - name: 发布到 Releases
+        env:
+          TAG: ${{ steps.tag.outputs.tag }}
+          ASSET: ${{ steps.pack.outputs.asset }}
+          TITLE: ${{ steps.info.outputs.title }}
+        run: |
+          set -euo pipefail
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            echo "已存在同名 Release，上传/覆盖资源。"
+            gh release upload "$TAG" "$ASSET" --clobber
+            gh release edit "$TAG" --title "$TITLE" --notes-file dist/notes.md
+          elif [ "${{ github.event_name }}" = "push" ]; then
+            gh release create "$TAG" "$ASSET" --verify-tag \
+              --title "$TITLE" --notes-file dist/notes.md
+          else
+            gh release create "$TAG" "$ASSET" --target "$GITHUB_SHA" \
+              --title "$TITLE" --notes-file dist/notes.md
+          fi
+
+      - name: 写入任务摘要
+        if: always()
+        run: |
+          {
+            echo "### ${{ steps.info.outputs.title }}"
+            echo ""
+            echo "- 上游仓库：\`${{ steps.info.outputs.upstream_repo }}\` @ \`${{ steps.info.outputs.upstream_tag }}\`"
+            echo "- 汉化文件：\`${{ steps.info.outputs.translation }}\`"
+            echo "- 产物：\`${{ steps.pack.outputs.asset_name }}\`"
+          } >> "$GITHUB_STEP_SUMMARY"
+          if [ -f dist/notes.md ]; then
+            echo "" >> "$GITHUB_STEP_SUMMARY"
+            cat dist/notes.md >> "$GITHUB_STEP_SUMMARY"
+          fi
