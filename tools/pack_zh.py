@@ -31,6 +31,12 @@ BUILDS = {
         "dir": "translations/2.0.2/SU{v}/chinese.milanguage",
         "fallback": None,
     },
+    "VB": {
+        "repo": "",
+        "name": "Vexel Build",
+        "dir": "translations/2.0.2/VB{v}/chinese.milanguage",
+        "fallback": None,
+    },
     "CB": {
         "repo": "",
         "name": "Community Build",
@@ -56,7 +62,7 @@ def flat_map(data, prefix=""):
 
 
 def parse_tag(tag):
-    m = re.match(r"^2\.0\.2-(CC|SU|CB)(.+)$", tag)
+    m = re.match(r"^2\.0\.2-(CC|SU|VB|CB)(.+)$", tag)
     if not m:
         return None, None
     return m.group(1), m.group(2)
@@ -66,14 +72,10 @@ def resolve(tag):
     build, version = parse_tag(tag)
     if build is None:
         raise SystemExit(
-            "无法从标签 %r 解析构建类型。期望形如 2.0.2-CC1.0.14 / 2.0.2-SU1.0.14.0 / 2.0.2-CB1.0.0" % tag
+            "无法从标签 %r 解析构建类型。期望形如 2.0.2-CC1.0.14 / 2.0.2-SU1.0.14.0 / 2.0.2-VB1.3.2" % tag
         )
 
     info = BUILDS[build]
-    if not info["repo"]:
-        raise SystemExit(
-            "%s 没有可用的上游 GitHub 仓库，无法自动打包（标签：%s）" % (info["name"], tag)
-        )
 
     lang = ROOT / info["dir"].format(v=version)
     if not lang.exists() and info["fallback"]:
@@ -89,6 +91,7 @@ def resolve(tag):
         "upstream_tag": version,
         "translation": lang,
         "release_tag": tag,
+        "source_mode": "release" if info["repo"] else "manual",
         "title": "2.0.2 %s %s 简体中文版" % (info["name"], version),
     }
 
@@ -114,11 +117,64 @@ def output_name(upstream_name):
     return stem + path.suffix
 
 
+def extract_zip(zip_path, work):
+    """解压发行包。
+
+    部分构建（如 Vexel Build）在 Windows 下打包，条目名用的是反斜杠分隔，
+    在 Linux 上会被当成单个文件名，因此这里统一规范化后再落盘。
+    """
+    with zipfile.ZipFile(zip_path) as zf:
+        for info in zf.infolist():
+            name = info.filename.replace("\\", "/").lstrip("/")
+            if not name:
+                continue
+            parts = [p for p in name.split("/") if p not in ("", ".")]
+            if any(p == ".." for p in parts):
+                continue
+            target = work.joinpath(*parts)
+            if info.is_dir() or name.endswith("/"):
+                target.mkdir(parents=True, exist_ok=True)
+                continue
+            target.parent.mkdir(parents=True, exist_ok=True)
+            with zf.open(info) as src, open(target, "wb") as dst:
+                shutil.copyfileobj(src, dst)
+
+
+def find_dir(base, name):
+    """在 base 下按名字查找目录（忽略大小写），找不到返回 None。"""
+    for path in base.iterdir():
+        if path.is_dir() and path.name.lower() == name.lower():
+            return path
+    return None
+
+
 def find_app_root(tmp):
-    """返回发行包内的程序根目录（含 Data/Languages/english.milanguage）。"""
-    for path in tmp.rglob("english.milanguage"):
-        if path.parent.name == "Languages" and path.parent.parent.name == "Data":
-            return path.parent.parent.parent
+    """返回 (程序根目录, Languages 目录)。
+
+    不同构建/打包方式的目录层级与大小写不一致，这里按“找到 english.milanguage”反推。
+    """
+    candidates = [p for p in tmp.rglob("*") if p.is_file() and p.name.lower() == "english.milanguage"]
+    for path in candidates:
+        entries = list(path.parent.parent.iterdir())
+        if any(e.is_dir() and e.name.lower() == "languages" for e in entries):
+            return path.parent.parent.parent, path.parent
+    if candidates:
+        return candidates[0].parent.parent.parent, candidates[0].parent
+
+    # 诊断：打印包内结构，便于判断拿到的到底是不是绿色版
+    print("发行包结构（前 40 项）：")
+    shown = 0
+    for p in sorted(tmp.rglob("*")):
+        if shown >= 40:
+            break
+        print("   ", p.relative_to(tmp))
+        shown += 1
+    installers = [p.name for p in tmp.rglob("*") if p.suffix.lower() in (".exe", ".msi")]
+    if installers:
+        raise SystemExit(
+            "包内只找到安装程序（%s），没有 Data/Languages。请使用官方 zip 绿色版，或先安装后再打包。"
+            % "、".join(installers[:3])
+        )
     raise SystemExit("上游发行包内未找到 Data/Languages/english.milanguage，包结构可能已变化")
 
 
@@ -127,31 +183,23 @@ def load_language(path):
         return json.load(fh)
 
 
-def patch_languages(root, lang_bytes):
-    """写入汉化文件并注册语言；同时把默认语言改为中文。"""
-    lang_dir = root / "Data" / "Languages"
-    original = lang_dir / "english.milanguage"
-
-    # 原版英文另存一份，供用户在语言菜单里切回英文
-    backup = lang_dir / "english_original.milanguage"
-    if not backup.exists():
-        shutil.copyfile(original, backup)
-
-    # Mine-imator 的默认语言被硬编码为 english.milanguage，覆盖它才能做到开箱即中文
-    with open(original, "wb") as fh:
-        fh.write(lang_bytes)
+def patch_languages(root, lang_dir, lang_bytes):
+    """新增中文语言并注册，原版英文保持不动。"""
     with open(lang_dir / "chinese.milanguage", "wb") as fh:
         fh.write(lang_bytes)
 
-    meta_path = root / "Data" / "languages.midata"
+    data_dir = lang_dir.parent
+    meta_path = find_dir(data_dir, "languages.midata") or (data_dir / "languages.midata")
     meta = {"languages": []}
     if meta_path.exists():
         with open(meta_path, encoding="utf-8-sig") as fh:
             meta = json.load(fh)
-    entries = [e for e in meta.get("languages", []) if e.get("filename") not in
-               ("chinese.milanguage", "english.milanguage", "english_original.milanguage")]
+    # 去掉历史遗留的英文副本项，保留其余语言
+    entries = [e for e in meta.get("languages", [])
+               if e.get("filename") not in ("chinese.milanguage", "english_original.milanguage")]
+    if not any(e.get("filename") == "english.milanguage" for e in entries):
+        entries.insert(0, {"name": "English", "locale": "en-US", "filename": "english.milanguage"})
     entries.insert(0, {"name": "简体中文", "locale": "zh-CN", "filename": "chinese.milanguage"})
-    entries.insert(1, {"name": "English", "locale": "en-US", "filename": "english_original.milanguage"})
     meta["languages"] = entries
     with open(meta_path, "w", encoding="utf-8", newline="\n") as fh:
         json.dump(meta, fh, ensure_ascii=False, indent="\t")
@@ -162,10 +210,11 @@ def patch_languages(root, lang_bytes):
 def replace_fonts(root):
     """用仓库内的 CJK 字体替换上游拉丁字体。"""
     font_src = ROOT / FONT_DIR
-    font_dst = root / "Data" / "Fonts"
+    data_dir = find_dir(root, "Data")
+    font_dst = find_dir(data_dir, "Fonts") if data_dir else None
     if not font_src.is_dir():
         raise SystemExit("仓库内缺少字体目录：%s" % font_src)
-    if not font_dst.is_dir():
+    if font_dst is None:
         raise SystemExit("上游包内缺少 Data/Fonts 目录")
 
     expected = {p.name for p in font_dst.iterdir() if p.suffix.lower() == ".ttf"}
@@ -184,7 +233,7 @@ def replace_fonts(root):
 def replace_particles(root):
     """用中文命名的粒子预设替换上游英文预设。"""
     src = ROOT / PARTICLE_DIR
-    dst = root / "Particles"
+    dst = find_dir(root, "Particles") or (root / "Particles")
     if not src.is_dir():
         raise SystemExit("仓库内缺少粒子目录：%s" % src)
     dst.mkdir(parents=True, exist_ok=True)
@@ -235,13 +284,21 @@ def sha256(path):
 
 def build_notes(meta, lang_header, stats, out_zip, fonts, removed, added):
     size_mb = out_zip.stat().st_size / 1048576
+    if meta["upstream_repo"]:
+        upstream = "`%s`（[发布页](https://github.com/%s/releases/tag/%s)）" % (
+            meta["version"],
+            meta["upstream_repo"],
+            meta["upstream_tag"],
+        )
+    else:
+        upstream = "`%s`（官方站点分发，无公开仓库）" % meta["version"]
+
     lines = [
         "## 汉化更新：Mine-imator 2.0.2 %s %s" % (meta["upstream_name"], meta["version"]),
         "",
-        "**下载即中文**：解压后双击 `Mine-imator.exe` 直接就是简体中文界面。",
+        "**下载即用**：已内置简体中文语言文件、中文字体与中文粒子预设，原版英文保持原样。",
         "",
-        "- 上游版本：`%s`（[发布页](https://github.com/%s/releases/tag/%s)）"
-        % (meta["version"], meta["upstream_repo"], meta["upstream_tag"]),
+        "- 上游版本：%s" % upstream,
         "- 汉化文件：`%s`" % Path(meta["translation"]).relative_to(ROOT).as_posix(),
         "- 汉化版本：`%s`，最后更新 `%s`" % (lang_header.get("forversion", "?"), lang_header.get("lastchange", "?")),
         "- 文本条目：英文 %d / 中文 %d，缺失 %d，多余 %d" % stats[:4],
@@ -251,8 +308,8 @@ def build_notes(meta, lang_header, stats, out_zip, fonts, removed, added):
         "### 使用方法",
         "",
         "1. 下载 `%s`（%.1f MB）并解压到任意目录；" % (out_zip.name, size_mb),
-        "2. 双击 `Mine-imator.exe`，启动即为简体中文；",
-        "3. 想用英文时，在 `设置 → 语言` 里选择 `English`。",
+        "2. 双击解压目录中的程序；",
+        "3. 在 `设置 → 语言` 里选择 `简体中文` 即可切换为中文；想用英文则选 `English`。",
         "",
         "> 汉化仍在持续维护，翻译问题欢迎在 Issue 中反馈。",
         "",
@@ -272,6 +329,7 @@ def cmd_resolve(args):
             "upstream_name": meta["upstream_name"],
             "translation": Path(meta["translation"]).relative_to(ROOT).as_posix(),
             "release_tag": meta["release_tag"],
+            "source_mode": meta["source_mode"],
             "title": meta["title"],
         },
         args.out,
@@ -293,23 +351,18 @@ def cmd_build(args):
         shutil.rmtree(work)
     work.mkdir(parents=True)
 
-    with zipfile.ZipFile(upstream_zip) as zf:
-        zf.extractall(work)
+    extract_zip(upstream_zip, work)
 
-    app_root = find_app_root(work)
-    original_english = app_root / "Data" / "Languages" / "english.milanguage"
-    original_bytes = original_english.read_bytes()
+    app_root, lang_dir = find_app_root(work)
+    english_original = (lang_dir / "english.milanguage").read_bytes()
 
-    patch_languages(app_root, lang_bytes)
-    stats = check_keys(
-        app_root / "Data" / "Languages" / "english_original.milanguage", lang_path, args.allow_missing
-    )
+    patch_languages(app_root, lang_dir, lang_bytes)
+    stats = check_keys(lang_dir / "english.milanguage", lang_path, args.allow_missing)
     fonts = replace_fonts(app_root)
     removed, added = replace_particles(app_root)
 
-    # 键比对基准用的是刚备份的原版英文，这里确保备份内容未被污染
-    if (app_root / "Data" / "Languages" / "english_original.milanguage").read_bytes() != original_bytes:
-        raise SystemExit("原版英文语言文件备份异常")
+    if (lang_dir / "english.milanguage").read_bytes() != english_original:
+        raise SystemExit("原版英文语言文件被改动，已中止")
 
     out_dir = Path(args.out_dir)
     out_zip = out_dir / output_name(upstream_zip.name)

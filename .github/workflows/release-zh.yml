@@ -12,16 +12,19 @@ on:
   workflow_dispatch:
     inputs:
       build:
-        description: "构建类型（CC=延续版，SU=简单升级版）"
+        description: "构建类型（CC=延续版，SU=简单升级版，VB=Vexel 版）"
         required: true
         type: choice
-        options: ["CC", "SU"]
+        options: ["CC", "SU", "VB"]
         default: "CC"
       version:
         description: "上游版本号，例如 1.0.14 或 1.0.14.0"
         required: true
       tag:
         description: "发布用标签（留空自动生成 2.0.2-<类型><版本>）"
+        required: false
+      asset_url:
+        description: "上游发行包直链（VB 等无 GitHub 仓库的构建必填，也用于临时改用其他下载源）"
         required: false
 
 permissions:
@@ -70,12 +73,23 @@ jobs:
           python3 tools/pack_zh.py resolve --tag "${{ steps.tag.outputs.tag }}" --out "$GITHUB_OUTPUT"
 
       - name: 拉取上游发行包
+        env:
+          ASSET_URL: ${{ inputs.asset_url }}
+          SOURCE_MODE: ${{ steps.info.outputs.source_mode }}
         run: |
           set -euo pipefail
           mkdir -p upstream
-          gh release download "${{ steps.info.outputs.upstream_tag }}" \
-            --repo "${{ steps.info.outputs.upstream_repo }}" \
-            --pattern "*.zip" --dir upstream
+          if [ -n "${ASSET_URL:-}" ]; then
+            echo "从直链下载：$ASSET_URL"
+            curl -fL --retry 3 -o "upstream/$(basename "${ASSET_URL%%\?*}")" "$ASSET_URL"
+          elif [ "$SOURCE_MODE" = "release" ]; then
+            gh release download "${{ steps.info.outputs.upstream_tag }}" \
+              --repo "${{ steps.info.outputs.upstream_repo }}" \
+              --pattern "*.zip" --dir upstream
+          else
+            echo "::error::${{ steps.info.outputs.upstream_name }} 没有公开的上游仓库，请手动运行本工作流并填写 asset_url（发行包直链）。"
+            exit 1
+          fi
           ls -lh upstream
 
       - name: 注入汉化、字体与粒子
